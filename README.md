@@ -1,6 +1,6 @@
 # PodSurfer Template Project
 
-https://codeship.com/projects/2fa384f0-5b76-0134-8cc8-2a2c89969ad5/status?branch=master
+<img src="https://codeship.com/projects/2fa384f0-5b76-0134-8cc8-2a2c89969ad5/status?branch=master">
 
 ## Using Git
 For this project, you will need to manage your project using Git. Git is a version control system that is used for software development and other version control tasks. As a distributed revision control system it is aimed at speed, data integrity, and support for distributed, non-linear workflows.
