@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
+	
 	@RequestMapping("/map")
-	public @ResponseBody String map() {
+	public @ResponseBody String map()
+	{
 		return "map";
 	}
 
