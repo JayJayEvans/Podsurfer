@@ -48,7 +48,14 @@
           controler: 'favoritesController',
           controllerAs: 'favorites'
         })
-      
+
+          .state('search', {
+            url: '/search',
+            templateUrl: 'search/search.html',
+            controler: 'searchController',
+            controllerAs: 'search'
+          })
+
         ; // This semicolon goes after the last .state group thing
     };
 
