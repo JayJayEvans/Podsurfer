@@ -42,11 +42,11 @@
           controllerAs: 'contact'
 
         })
-        .state('favorites', {
-          url: '/favorites',
-          templateUrl: 'favorites/favorites.html',
-          controler: 'favoritesController',
-          controllerAs: 'favorites'
+        .state('search', {
+          url: '/search',
+          templateUrl: 'search/search.html',
+          controler: 'searchController',
+          controllerAs: 'search'
         })
         .state('popular', {
           url: '/popular',
@@ -54,17 +54,23 @@
           controler: 'popularController',
           controllerAs: 'popular'
         })
+        .state('suggested', {
+          url: '/suggested',
+          templateUrl: 'suggested/suggested.html',
+          controler: 'suggestedController',
+          controllerAs: 'suggested'
+        })
+        .state('favorites', {
+          url: '/favorites',
+          templateUrl: 'favorites/favorites.html',
+          controler: 'favoritesController',
+          controllerAs: 'favorites'
+        })
         .state('profile', {
           url: '/profile',
           templateUrl: 'profile/profile.html',
           controler: 'profileController',
           controllerAs: 'profile'
-        })
-        .state('search', {
-          url: '/search',
-          templateUrl: 'search/search.html',
-          controler: 'searchController',
-          controllerAs: 'search'
         })
         ; // This semicolon goes after the last .state group thing
     };
