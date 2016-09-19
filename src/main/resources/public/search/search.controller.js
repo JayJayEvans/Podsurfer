@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app')
-        .controller('searchController', favoritesController);
+        .controller('searchController', searchController);
 
     searchController.$inject = [];
     function searchController() {

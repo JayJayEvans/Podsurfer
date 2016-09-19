@@ -71,8 +71,7 @@
           templateUrl: 'profile/profile.html',
           controler: 'profileController',
           controllerAs: 'profile'
-        })
-        ; // This semicolon goes after the last .state group thing
+        }); // This semicolon goes after the last .state group thing
     };
 
 })();
