@@ -65,7 +65,7 @@
           controller: 'favoritesController',
           controllerAs: 'favorites'
         })
-        .state('profile', {
+        state('profile', {
           url: '/profile',
           templateUrl: 'profile/profile.html',
           controller: 'profileController',
