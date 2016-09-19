@@ -7,6 +7,6 @@
     profileController.$inject = [];
     function profileController() {
       var vm = this;
-      vm.message = 'Your Profile';
+      vm.message = 'User Profile';
     }
 })();
