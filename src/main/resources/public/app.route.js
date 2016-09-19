@@ -40,38 +40,37 @@
           templateUrl: 'contact/contact.html',
           controller: 'contactController',
           controllerAs: 'contact'
-
         })
         .state('search', {
           url: '/search',
           templateUrl: 'search/search.html',
-          controler: 'searchController',
+          controller: 'searchController',
           controllerAs: 'search'
         })
         .state('popular', {
           url: '/popular',
           templateUrl: 'popular/popular.html',
-          controler: 'popularController',
+          controller: 'popularController',
           controllerAs: 'popular'
         })
         .state('suggested', {
           url: '/suggested',
           templateUrl: 'suggested/suggested.html',
-          controler: 'suggestedController',
+          controller: 'suggestedController',
           controllerAs: 'suggested'
         })
         .state('favorites', {
           url: '/favorites',
           templateUrl: 'favorites/favorites.html',
-          controler: 'favoritesController',
+          controller: 'favoritesController',
           controllerAs: 'favorites'
         })
         .state('profile', {
           url: '/profile',
           templateUrl: 'profile/profile.html',
-          controler: 'profileController',
+          controller: 'profileController',
           controllerAs: 'profile'
-        }); // This semicolon goes after the last .state group thing
+        });
     };
 
 })();
