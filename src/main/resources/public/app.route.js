@@ -41,7 +41,15 @@
           controller: 'contactController',
           controllerAs: 'contact'
 
-        });
+        })
+        .state('favorites', {
+          url: '/favorites',
+          templateUrl: 'favorites/favorites.html',
+          controler: 'favoritesController',
+          controllerAs: 'favorites'
+        })
+      
+        ; // This semicolon goes after the last .state group thing
     };
 
 })();

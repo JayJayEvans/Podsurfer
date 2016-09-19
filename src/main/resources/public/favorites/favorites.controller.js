@@ -7,6 +7,6 @@
     favoritesController.$inject = [];
     function favoritesController() {
       var vm = this;
-      vm.message = "The user's favorited items";
+      vm.message = "Favorite Podcasts";
     }
 })();
