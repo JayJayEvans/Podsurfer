@@ -65,7 +65,7 @@
           controller: 'favoritesController',
           controllerAs: 'favorites'
         })
-        state('account', {
+        .state('account', {
           url: '/account',
           templateUrl: 'account/account.html',
           controller: 'accountController',
