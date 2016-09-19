@@ -48,6 +48,18 @@
           controler: 'favoritesController',
           controllerAs: 'favorites'
         })
+        .state('popular', {
+          url: '/popular',
+          templateUrl: 'popular/popular.html',
+          controler: 'popularController',
+          controllerAs: 'popular'
+        })
+        .state('profile', {
+          url: '/profile',
+          templateUrl: 'profile/profile.html',
+          controler: 'profileController',
+          controllerAs: 'profile'
+        })
       
         ; // This semicolon goes after the last .state group thing
     };
