@@ -65,11 +65,11 @@
           controller: 'favoritesController',
           controllerAs: 'favorites'
         })
-        state('profile', {
-          url: '/profile',
-          templateUrl: 'profile/profile.html',
-          controller: 'profileController',
-          controllerAs: 'profile'
+        .state('account', {
+          url: '/account',
+          templateUrl: 'account/account.html',
+          controller: 'accountController',
+          controllerAs: 'account'
         });
     };
 
