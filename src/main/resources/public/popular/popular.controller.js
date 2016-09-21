@@ -7,6 +7,6 @@
     popularController.$inject = [];
     function popularController() {
       var vm = this;
-      vm.message = 'Popular Podcasts';
+      vm.message = 'Unpopular Podcasts';
     }
 })();
