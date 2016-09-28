@@ -14,5 +14,18 @@
         <div class="col-xs-12 text-center   ">
             <h3 ng-class="{'text-danger': home.outOfZen}">{{home.zen}}</h3>
         </div>
+        
+        
+        
+        
+        <h2>LOGIN</h2>
+        <input type="text" class="form-control" value="Username">
+        <input type="text" class="form-control" value="Password">
+        
+        <button type="button" class="btn btn-primary btn-lg btn-block"
+                    ng-click="home.login()">
+            Login
+        </button>
+        
     </div>
 </div>
