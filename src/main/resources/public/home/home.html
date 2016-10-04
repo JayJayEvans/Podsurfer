@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <h2 class="text-center">{{home.welcome}} <h2>
+        <h2 class="text-center">{{home.welcome}}<h2>
     </div>
 
    <hr class="row"/>
@@ -17,10 +17,10 @@
         
         
         
-        
+        <!-- FIX MODEL NAMES THAT CAN BE ACCESSED IN THE CONTROLLER -->
         <h2>LOGIN</h2>
-        <input type="text" class="form-control" value="Username">
-        <input type="text" class="form-control" value="Password">
+        <input ng-model="PUT MODEL NAME HERE" type="text" class="form-control" value="Username">
+        <input ng-model="PUT MODEL NAME HERE" type="text" class="form-control" value="Password">
         
         <button type="button" class="btn btn-primary btn-lg btn-block"
                     ng-click="home.login()">

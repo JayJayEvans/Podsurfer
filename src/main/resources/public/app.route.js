@@ -70,7 +70,15 @@
           templateUrl: 'account/account.html',
           controller: 'accountController',
           controllerAs: 'account'
-        });
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'login/login.html',
+          controller: 'loginController',
+          controllerAs: 'login'
+        })
+        
+        ;
     };
 
 })();
