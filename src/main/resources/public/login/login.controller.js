@@ -1,35 +1,36 @@
 (function() {
   'use strict';
 
-    angular.module('app')
-      .controller('loginController', loginController);
+  angular
+    .module('app')
+    .controller('loginController', loginController);
 
-    homeController.$inject = ['homeEndpoints'];
+  loginController.$inject = ['loginWithCredentials'];
+  
+  function loginController(loginWithCredentials) {
     
-    function homeController(homeEndpoints) {
+    var vm = this;
+    vm.title = 'Login';
+    vm.login = login; // Assign loginController.login to be the login function
+                      // declared below
+    
+    // Login Function takes the email and password entered in the HTML inputs
+    function login(email, password) {
       
-      var vm = this;
-
-      vm.title = 'Login';
-
-/*
-      function getZen() {
-        var success = function(response) {
-          vm.outOfZen = false;
-          console.log('Got Zen');
-          vm.zen = response.data;
-        };
-
-        var error = function(response) {
-          vm.outOfZen = true;
-          console.error('Failed to get Zen');
-          vm.zen = response.data.message;
-        };
-
-        return homeEndpoints.getZen().then(success, error);
-      }
-*/
-
+      // Login Success Scenario
+      var success = function(response) {
+        console.log('Logged In User!');
+        console.log(response.data);
+      };
+      
+      // Login Error Scenario
+      var error = function(response) {
+        console.error('Failed to login');
+        console.log(response.data);
+      };
+      
+      return loginWithCredentials.checkCredentials(email, password).then(success, error); 
     }
+  }
 
 })();

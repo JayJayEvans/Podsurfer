@@ -5,6 +5,7 @@
       .controller('homeController', homeController);
 
     homeController.$inject = ['homeEndpoints'];
+    
     function homeController(homeEndpoints) {
       var vm = this;
 

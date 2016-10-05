@@ -76,9 +76,7 @@
           templateUrl: 'login/login.html',
           controller: 'loginController',
           controllerAs: 'login'
-        })
-        
-        ;
+        });
     };
 
 })();
