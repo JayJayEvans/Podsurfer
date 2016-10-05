@@ -7,6 +7,6 @@
     searchController.$inject = [];
     function searchController() {
         var vm = this;
-        vm.message = 'Search bar';
+        vm.message = 'Search For Podcasts';
     }
 })();

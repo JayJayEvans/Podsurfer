@@ -11,11 +11,9 @@
     
     var vm = this;
     vm.title = 'Login';
-    vm.login = login; // Assign loginController.login to be the login function
-                      // declared below
     
     // Login Function takes the email and password entered in the HTML inputs
-    function login(email, password) {
+    vm.login = function login(email, password) {
       
       // Login Success Scenario
       var success = function(response) {
