@@ -1,4 +1,7 @@
 spring-template.iml
 .idea
+.settings
+.project
+.classpath
 target
 spring-boot-template.iml
