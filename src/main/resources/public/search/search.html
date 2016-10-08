@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="row">
-        <h3 class="text-center">{{search.message}}</h3>
-    </div>
-    <hr class="row" />
-    <div class="row">
-        search bar
-    </div>
-
-    <hr class="row"/>
+  <div class="row">
+    <h3 class="text-center">{{search.message}}</h3>
+  </div>
+  <div class="row">
+    <input ng-model="searchQuery" type="text" class="form-control" value="Email"
+    style="font-size: 48px; height: 90px; outline: none; border: 1px solid #dbdbdb;
+    border-bottom: solid #31A6FF; border-radius: 0; font-weight: 900; margin-bottom: 50px;">
+    <button ng-click="search.search(searchQuery)" type="button" class="btn btn-primary btn-lg btn-block">Search</button>
+  </div>
 </div>

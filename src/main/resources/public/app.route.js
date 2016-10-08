@@ -7,7 +7,7 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
 
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/search');
 
       $stateProvider
         .state('home', {
@@ -70,6 +70,12 @@
           templateUrl: 'account/account.html',
           controller: 'accountController',
           controllerAs: 'account'
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'login/login.html',
+          controller: 'loginController',
+          controllerAs: 'login'
         });
     };
 
