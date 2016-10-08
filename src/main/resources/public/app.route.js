@@ -76,7 +76,14 @@
           templateUrl: 'login/login.html',
           controller: 'loginController',
           controllerAs: 'login'
-        });
+        })
+        .state('singular-podcast', {
+          url: '/singular-podcast',
+          templateUrl: 'singular-podcast/singular-podcast.html',
+          controller: 'singular-podcastController',
+          controllerAs: 'singular-podcast'
+        })
+        ;
     };
 
 })();
