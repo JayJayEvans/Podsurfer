@@ -9,3 +9,6 @@ spring-boot-template.iml
 .project
 .classpath
 src/main/resources/public/.DS_Store
+*.iml
+src/main/resources/public/layout
+*.endpoints.*
