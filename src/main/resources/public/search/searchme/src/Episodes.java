@@ -1,3 +1,4 @@
+/*
 import java.util.Arrays;
 
 /**
@@ -6,7 +7,7 @@ import java.util.Arrays;
 
 
 //documentation is same as podcast
-public class Episodes {
+/*public class Episodes {
     public String episodeNum;
     public String episodeName;
     public String episodeLink;
@@ -64,3 +65,4 @@ public class Episodes {
 
 
     }
+*/
