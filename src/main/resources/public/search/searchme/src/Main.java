@@ -1,3 +1,4 @@
+/*
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class Main {
         // any word is identical to data, you'll see all podcast data. If no words were found, user is presented with message
         // indicating so
 
-        /*
+
         Episodes []eList = new Episodes[2];
         eList[0] = new Episodes("1", "Early Childhood", "goober.com", "Avoiding the sunlight", "yolo.com");
         eList[1] = new Episodes("2", "Late Childhood", "goober.com", "Avoiding the moonlight", "yolt.com");
@@ -25,6 +26,7 @@ public class Main {
         else
             System.out.println("No results found");
     }
-    */
+
         
 }
+        */
