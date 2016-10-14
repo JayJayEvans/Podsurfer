@@ -1,10 +1,10 @@
-/*
+
 import java.util.Arrays;
 
 /**
  * Created by Jason on 10/8/2016.
  */
-/*
+
 public class Podcast {
     public String id;
     public String name;
@@ -21,7 +21,7 @@ public class Podcast {
     *
     *
      */
-/*    public Podcast(String podId, String podName,String podLink, String podRelease, String podProducer,
+    public Podcast(String podId, String podName,String podLink, String podRelease, String podProducer,
                    String podLength, String podDescription, Episodes[] podEp){
         id = podId;
         name = podName;
@@ -41,7 +41,7 @@ public class Podcast {
     /* Lists all attributes of a podcast
     *
      */
-/*    public void listMe(){
+    public void listMe(){
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Link: " + link);
@@ -59,7 +59,7 @@ public class Podcast {
     *  Search Functionality
     *  returns true if item is found, false if not
      */
-  /*  public Boolean findMe(String input){
+    public Boolean findMe(String input){
         String[] elements = input.split(" "); //puts space delimited words into their own substring
                                               //this allows each words in a user's sentence to be checked
 

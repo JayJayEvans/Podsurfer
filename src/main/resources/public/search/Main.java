@@ -24,9 +24,4 @@ public class Main {
             p1.listMe();
         }
         else
-            System.out.println("No results found");
-    }
-
-        
-}
-        */
+            System.out.println("No results found"
