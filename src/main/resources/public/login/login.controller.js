@@ -8,8 +8,7 @@ angular
   loginController.$inject = ['loginWithCredentials', '$cookies'];
 
   function loginController(loginWithCredentials, $cookies) {
-    $cookies.NameOfMyCookie = "Testinging cookie";
-    alert($cookies.NameOfMyCookie);
+    alert('Our Site Uses cookies ;)');
     var vm = this;
     vm.title = 'Login';
     
@@ -19,10 +18,10 @@ angular
       // Login Success Scenario
       var success = function(response) {
         console.log('Logged In User!');
-        console.log(response.data);
-        $cookies.put('userObj', response);
-        var value = $cookies.get('userOb');
-        //console.log(value);
+        $cookies.putObject('userObj',response.data);
+        var value = $cookies.getObject('userObj');
+
+        console.log(value);
       };
       
       // Login Error Scenario
