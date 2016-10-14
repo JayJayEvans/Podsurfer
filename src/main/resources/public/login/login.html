@@ -7,9 +7,21 @@
   <hr class="row"/>
    
     <div class="row">
-      <input ng-model="email" type="text" class="form-control" value="Email">
-      <input ng-model="password" type="text" class="form-control" value="Password">
+
+      
+      <input type="text" class="form-control" name="email" value="Email"
+             onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+             onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
+             style="color:#BBB;" />
+      <input type="text" class="form-control" name="password" value="Password"
+             onblur="if(this.value==''){ this.value='Password'; this.style.color='#BBB';}"
+             onfocus="if(this.value=='Password'){ this.value=''; this.style.color='#000';}"
+             style="color:#BBB;" />
+      <!--<input ng-model="email" type="text" class="form-control" value="Email">
+      <input ng-model="password" type="text" class="form-control" value="Password"> -->
 
       <button ng-click="login.login(email, password)" type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+
+
     </div>
 </div>
