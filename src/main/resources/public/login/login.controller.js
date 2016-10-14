@@ -1,14 +1,15 @@
 (function() {
   'use strict';
 
-  angular
+angular
     .module('app')
-    .controller('loginController', loginController);
+    .controller('loginController',loginController);
 
-  loginController.$inject = ['loginWithCredentials'];
-  
-  function loginController(loginWithCredentials) {
-    
+  loginController.$inject = ['loginWithCredentials', '$cookies'];
+
+  function loginController(loginWithCredentials, $cookies) {
+    $cookies.NameOfMyCookie = "Testinging cookie";
+    alert($cookies.NameOfMyCookie);
     var vm = this;
     vm.title = 'Login';
     
@@ -19,6 +20,9 @@
       var success = function(response) {
         console.log('Logged In User!');
         console.log(response.data);
+        $cookies.put('userObj', response);
+        var value = $cookies.get('userOb');
+        //console.log(value);
       };
       
       // Login Error Scenario
