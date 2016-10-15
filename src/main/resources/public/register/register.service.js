@@ -22,7 +22,7 @@
             // The register request
             var registerRequest = {
                 method: 'POST',
-                url: 'https://podsurfer-#.herokuapp.com/api/user',
+                url: 'https://podsurfer-4.herokuapp.com/api/user',
                 data: {
                     name: userName,
                     email: userEmail,

@@ -3,10 +3,8 @@
     <h3 class="text-center">{{search.message}}</h3>
   </div>
   <div class="row">
-    <input type="text" class="form-control" name="searchQuery" value="Search"
-           onblur="if(this.value==''){ this.value='Search'; this.style.color='#BBB';}"
-           onfocus="if(this.value=='Search'){ this.value=''; this.style.color='#000';}"
-           style="color:#BBB;" />
+
+    <input ng-model="searchQuery" type="text" class="form-control" placeholder="Name" value="Search">
     <!--<input ng-model="searchQuery" type="text" class="form-control" value="Email"
     style="font-size: 48px; height: 90px; outline: none; border: 1px solid #dbdbdb;
     border-bottom: solid #31A6FF; border-radius: 0; font-weight: 900; margin-bottom: 50px;"> -->

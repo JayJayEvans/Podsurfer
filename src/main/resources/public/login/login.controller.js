@@ -8,7 +8,7 @@ angular
   loginController.$inject = ['loginWithCredentials', '$cookies'];
 
   function loginController(loginWithCredentials, $cookies) {
-    alert('Our Site Uses cookies ;)');
+    //alert('Our Site Uses cookies ;)');
     var vm = this;
     vm.title = 'Login';
     

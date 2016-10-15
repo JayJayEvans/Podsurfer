@@ -19,8 +19,8 @@
             // Register Success Scenario
             var success = function(response) {
                 console.log('Registered User!');
-                $cookies.putObject('userObj',response.data);
-                var value = $cookies.getObject('userObj');
+                $cookies.putObject('newUser',response.data);
+                var value = $cookies.getObject('newUser');
 
                 console.log(value);
             };
