@@ -14,6 +14,7 @@
     vm.account = function account() {
 
       var success = function(response) {
+        document.getElementById("acc_id").innerHTML = 'ID: ' + response.data._id;
         document.getElementById("accName").innerHTML = 'Name: ' + response.data.name;
         document.getElementById("accEmail").innerHTML = 'Email: ' + response.data.email;
 
