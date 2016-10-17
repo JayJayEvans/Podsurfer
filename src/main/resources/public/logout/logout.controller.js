@@ -20,14 +20,14 @@
             var success = function(response) {
                 var value = $cookies.get('userObj');
                 if(value != null){
-                    $cookies.remove(value);
-                    alert('Yolo?');
+                    $cookies.remove('userObj');
+                    location.reload();
                 }
 
             };
 
             var error = function(response) {
-                alert('You\'re not even logged in?');
+                alert('You\'re not logged in');
             };
 
 

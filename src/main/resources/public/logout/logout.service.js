@@ -8,9 +8,12 @@
         .module('app')
         .service('logMeOut', logMeOut);
 
-    logMeOut.$inject = ['$http'];
+    logMeOut.$inject = ['$http', '$cookies'];
 
-    function logMeOut($http) {
+    function logMeOut($http, $cookies) {
+        var value = $cookies.get('userObj');
+        if(value != null)
+            value = value.substring(10, value.length - 2);
 
         var exports = {
             logOut: logOut
@@ -22,7 +25,10 @@
             var logoutRequest = {
                 method: 'GET',
                 url: 'https://podsurfer-4.herokuapp.com/api/user/me',
+                headers: {
 
+                    Authorization: 'Bearer ' + value
+                }
             }
             return $http(logoutRequest);
         }
