@@ -12,11 +12,12 @@
 
     function myAccount($http, $cookies) {
         var value = $cookies.get('userObj');
-        //value.replace("{\"token\":\"", "Bearer ");
-        value = value.substring(10, value.length - 2);
-        var exports = {
-            fetchUser: fetchUser
-        };
+        if(value != null)
+            value = value.substring(10, value.length - 2);
+
+            var exports = {
+                fetchUser: fetchUser
+            };
 
         return exports;
 

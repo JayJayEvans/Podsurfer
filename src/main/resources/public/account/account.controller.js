@@ -12,7 +12,6 @@
     vm.title = 'Account';
 
     vm.account = function account() {
-
       var success = function(response) {
         document.getElementById("acc_id").innerHTML = 'ID: ' + response.data._id;
         document.getElementById("accName").innerHTML = 'Name: ' + response.data.name;
@@ -22,6 +21,9 @@
 
       var error = function(response) {
         console.error('Failed');
+        console.error($cookies.get('userObj'))
+        location.href = '#/login';
+        alert('You must be signed in to view your profile');
       };
 
       return myAccount.fetchUser().then(success, error);

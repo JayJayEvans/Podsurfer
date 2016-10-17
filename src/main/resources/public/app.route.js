@@ -89,6 +89,12 @@
             controller: 'registerController',
             controllerAs: 'register'
           })
+          .state('logout', {
+            url: '/logout',
+            templateUrl: 'logout/logout.html',
+            controller: 'logoutController',
+            controllerAs: 'logout'
+          })
         ;
     };
 
