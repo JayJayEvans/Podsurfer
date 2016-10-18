@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">{{register.title}}</h2>
+    </div>
+
+
+    <hr class="row"/>
+
+    <div class="row">
+       <!-- <input type="text" class="form-control" name="name" value="Name"
+               onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+               onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
+               style="color:#BBB;" />
+        <input type="text" class="form-control" name="email" value="Email"
+               onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+               onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
+               style="color:#BBB;" />
+        <input type="text" class="form-control" name="password" value="Password"
+               onblur="if(this.value==''){ this.value='Password'; this.style.color='#BBB';}"
+               onfocus="if(this.value=='Password'){ this.value=''; this.style.color='#000';}"
+               style="color:#BBB;" /> -->
+        <input ng-model="name" type="text" class="form-control" placeholder="Name" value="Name">
+        <input ng-model="email" type="text" class="form-control" placeholder="Email" value="Email">
+        <input ng-model="password" type="password" class="form-control" placeholder="Password" value="Password">
+
+        <button ng-click="register.register(name, email, password)" type="button" class="btn btn-primary btn-lg btn-block">Register</button>
+
+    </div>
+</div>

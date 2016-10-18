@@ -20,18 +20,24 @@
   <script src="contact/contact.service.js"></script>
   <script src="home/home.controller.js"></script>
   <script src="home/home.service.js"></script>
-  
+  <script src="angular.js"></script>
+  <script src="angular-cookies.js"></script>
+
   <!-- CONROLLERS FOR NEW PAGES WE ADDED -->
   <script src="search/search.controller.js"></script>
   <script src="popular/popular.controller.js"></script>
   <script src="suggested/suggested.controller.js"></script>
   <script src="favorites/favorites.controller.js"></script>
   <script src="account/account.controller.js"></script>
+  <script src="account/account.service.js"></script>
   <script src="login/login.controller.js"></script>
   <script src="login/login.service.js"></script>
   <script src="singular-podcast/singular-podcast.controller.js"></script>
   <script src="singular-podcast/singular-podcast.service.js"></script>
-  
+  <script src="register/register.controller.js"></script>
+  <script src="register/register.service.js"></script>
+  <script src="logout/logout.controller.js"></script>
+  <script src="logout/logout.service.js"></script>
   
   <link rel="stylesheet" type="text/css" href="app.css">
 </head>
@@ -40,7 +46,7 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="search"><i class="fa fa-connectdevelop"></i> PodSurfer</a>
+        <a class="navbar-brand" ui-sref="search"><i class="fa fa-search"></i> PodSurfer</a>
       </div>
 
       <ul class="nav navbar-nav navbar-right">
@@ -48,12 +54,15 @@
         <li><a ui-sref="about"><i class="fa fa-shield"></i> About</a></li>
         <li><a ui-sref="contact"><i class="fa fa-comment"></i> Contact</a></li>
         -->
-        <li><a ui-sref="popular"><i class="fa fa-shield"></i> Popular</a></li>
+        <li><a ui-sref="popular"><i class="fa fa-thumbs-up"></i> Popular</a></li>
         <li><a ui-sref="suggested"><i class="fa fa-flag-checked"></i> Suggested</a></li>
-        <li><a ui-sref="favorites"><i class="fa fa-comment"></i> Favorites</a></li>
-        <li><a ui-sref="account"><i class="fa fa-comment"></i> Account</a></li>
+        <li><a ui-sref="favorites"><i class="fa fa-heart"></i> Favorites</a></li>
+        <li><a ui-sref="account"><i class="fa fa-group"></i> Account</a></li>
         <li><a ui-sref="singular-podcast"><i class="fa fa-comment"></i> Single Podcast TEST</a></li>
         <li><a ui-sref="login"><i class="fa fa-comment"></i> Login</a></li>
+        <li><a ui-sref="logout"><i class="fa fa-comment"></i> Logout</a></li>
+
+
         
       </ul>
     </div>

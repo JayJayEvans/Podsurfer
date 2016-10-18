@@ -83,6 +83,18 @@
           controller: 'singular-podcastController',
           controllerAs: 'singular-podcast'
         })
+          .state('register', {
+            url: '/register',
+            templateUrl: 'register/register.html',
+            controller: 'registerController',
+            controllerAs: 'register'
+          })
+          .state('logout', {
+            url: '/logout',
+            templateUrl: 'logout/logout.html',
+            controller: 'logoutController',
+            controllerAs: 'logout'
+          })
         ;
     };
 
