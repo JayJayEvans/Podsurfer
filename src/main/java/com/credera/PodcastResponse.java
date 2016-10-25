@@ -5,15 +5,15 @@ public class PodcastResponse
 {
     
     // Member Variables
-    int id;
-    String name;
-    String link;
-    String release;
-    String producer;
-    String length;
-    String description;
-    List<Episode> episodes;
-    List<String> tags;
+    private int id;
+    private String name;
+    private String link;
+    private String release;
+    private String producer;
+    private String length;
+    private String description;
+    private List<Episode> episodes;
+    private List<String> tags;
     
     // Constructor
     public PodcastResponse (int id, String name, String link,
@@ -103,16 +103,15 @@ public class PodcastResponse
 	public void setTags(List<String> tags) {
 		this.tags = tags;
 	}
-	
 
 
 	public class Episode
     {
-        int number;
-        String name;
-        String link;
-        String description;
-        String imageUrl;
+        private int number;
+        private String name;
+        private String link;
+        private String description;
+        private String imageUrl;
         
         
 		public Episode(int number, String name, String link, String description,

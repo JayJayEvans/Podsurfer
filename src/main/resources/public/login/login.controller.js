@@ -28,7 +28,7 @@ angular
       
       // Login Error Scenario
       var error = function(response) {
-        document.getElementById("Fail_mess").innerHTML = 'Failed to login';
+        document.getElementById("login-fail").innerHTML = 'Failed to login';
         console.log(response.data);
       };
 

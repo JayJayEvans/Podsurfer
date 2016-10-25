@@ -19,7 +19,7 @@
       // The login request
       var loginRequest = {
         method: 'POST',
-        url: 'https://podsurfer-4.herokuapp.com/auth/local/',
+        url: '/loginAPI',
         data: {
           email: userEmail,
           password: userPassword
@@ -28,6 +28,8 @@
         }
       }
       return $http(loginRequest);
+      // ALTERNATIVE BELOW BUT ABOVE IS MORE READABLE
+      //return $http.post('/loginAPI?email=' + userEmail + '&password=' + userPassword);
     }
   }
 })();
