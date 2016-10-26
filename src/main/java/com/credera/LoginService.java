@@ -14,29 +14,15 @@ import com.google.common.collect.Maps;
 public class LoginService
 {
     
-    /*
-    public LoginResponse loginResponse(LoginRequest loginRequest) {
-        
-		List<String> generatedWords = Lists.newArrayList();
-		for(int i = 0; i < request.getRepeats(); i++) {
-			generatedWords.add(request.value);
-		}
-
-		Map<String, String> attributes = Maps.newHashMap();
-		if(request.getExtraKey() != null) {
-			attributes.put(request.getExtraKey(), request.getExtraValue());
-		}
-
-		attributes.putAll(request.getAdditionalAttributes());
-
-		return new BarResponse(generatedWords, attributes);
-
-	}*/
-    
     public static class LoginRequest
     {
         private String email;
         private String password;
+        
+        public LoginRequest() {
+        	this.email = "";
+        	this.password = "";
+        }
         
 		public LoginRequest(String email, String password) {
 			this.email = email;
