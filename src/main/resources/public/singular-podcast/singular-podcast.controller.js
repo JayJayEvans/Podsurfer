@@ -3,7 +3,7 @@
  * Update History:
  *
  */
-/*
+
 (function() {
     'use strict';
 
@@ -11,21 +11,27 @@
         .module('app')
         .controller('singularPodcastController', singularPodcastController);
 
-    singularPodcastController.$inject = ['$http', 'singularPodcastService'];
+    singularPodcastController.$inject = ['$http', 'returnPodcasts'];
 
-    function singularPodcastController($http, singularPodcastService) {
+    function singularPodcastController($http, returnPodcasts) {
         var vm = this;
+        vm.title = 'Return Podcasts';
         var temp;
 
+        ////
+        vm.returnPodcast = function returnPodcast() {
 
-         singularPodcastService.getFunc().then(function(response){
-             vm.hold = response;
-         },
-             function(reason){
-                 console.log('Failed call');
-                 vm.hold = [];
-             });
+            returnPodcasts.getFunc().then(function (response) {
+                    vm.hold = response;
+                },
+                function (reason) {
+                    console.log('Failed call');
+                    vm.hold = [];
+                });
 
+            return returnPodcasts.getFunc();
+
+        }
     }
 
-    })();*/
+    })();

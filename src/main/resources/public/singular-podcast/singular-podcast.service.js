@@ -3,21 +3,21 @@
  * Update History:
  *
  */
-/*
+
 (function(){
     'use strict';
 
     angular
         .module('app')
-        .service('singularPodcastService', singularPodcastService);
+        .service('returnPodcasts', returnPodcasts);
 
-    singularPodcastService.$inject = ['$http'];
+    returnPodcasts.$inject = ['$http'];
 
-    function singularPodcastService($http){
+    function returnPodcasts($http){
+
         var exports = {
             getFunc: getFunc
         };
-
 
         function getFunc(){
             //return $http.jsonp("https://podsurfer-4.herokuapp.com/api/podcast");
@@ -25,10 +25,10 @@
             var getRequest = {
                 method: 'GET',
                 url : 'https://podsurfer-4.herokuapp.com/api/podcast',
-                //headers?
+
             }
-            return $http(getFunc);
+            return $http(getRequest);
         }
         return exports;
     }
-})();*/
+})();
