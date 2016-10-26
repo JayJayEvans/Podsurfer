@@ -89,6 +89,12 @@
             controller: 'registerController',
             controllerAs: 'register'
           })
+          .state('addpodcast', {
+            url: '/addpodcast',
+            templateUrl: 'addpodcast/addpodcast.html',
+            controller: 'addpodcastController',
+            controllerAs: 'addpodcast'
+          })
           .state('logout', {
             url: '/logout',
             templateUrl: 'logout/logout.html',

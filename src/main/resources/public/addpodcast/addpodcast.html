@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">{{addpodcast.title}}</h2>
+    </div>
 
-</body>
-</html>
+
+    <hr class="row"/>
+
+    <div class="row">
+        <p id="upload-fail"></p>
+
+
+        <input ng-model="name" type="text" class="form-control" placeholder="Name" value="Name">
+        <input ng-model="link" type="text" class="form-control" placeholder="Password" value="Link">
+        <input ng-model="release" type="text" class="form-control" placeholder="Release" value="Release">
+        <input ng-model="producer" type="text" class="form-control" placeholder="Producer" value="Producer">
+        <input ng-model="length" type="text" class="form-control" placeholder="Length" value="Length">
+        <input ng-model="description" type="text" class="form-control" placeholder="Description" value="Description"
+               onkeydown = "if (event.keyCode == 13)
+                      document.getElementById('btn').click()">
+
+        <button ng-click="addpodcast.addpodcast(name, link, release, producer, length, description)" type="button" id="btn" class="btn btn-primary btn-lg btn-block">Post</button>
+        
+
+
+
+    </div>
+</div>
