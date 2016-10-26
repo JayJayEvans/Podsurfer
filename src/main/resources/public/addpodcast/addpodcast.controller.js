@@ -26,7 +26,7 @@
         };
 
         // Add Error Scenariovar
-        error = function(response){
+        var error = function(response){
             vm.successful = false;
             //vm.token = "false";
             //console.log
