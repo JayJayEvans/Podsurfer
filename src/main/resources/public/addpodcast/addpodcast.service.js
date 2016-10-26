@@ -12,14 +12,18 @@
         if(value != null)
             value = value.substring(10, value.length - 2);
 
-        var exports = {
-            addPodcast:addPodcast
-        };
 
-        function addPodcast(nameIn, linkIn, releaseIn, producerIn, lengthIn, descriptionIn){
+        var exports = {
+            addP:addP
+        };
+        return exports;
+
+        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, descriptionIn){
+
+
             var addRequest = {
                 method: 'POST',
-                url: 'https://podsurfer-#.herokuapp.com/api/user',
+                url: 'https://podsurfer-4.herokuapp.com/api/podcast',
                     headers:
                 {
 

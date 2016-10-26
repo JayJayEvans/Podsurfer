@@ -1,0 +1,38 @@
+<head>
+    <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+        <!--<h1>Fixed Top Navigation Bar</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page while scrolling</h2> -->
+
+        <div class="container">
+            <div class="row">
+                <h3 style="font-size:40px;" class="text-center">{{editaccount.title}}</h3>
+            </div>
+            <hr class="row" />
+            <div class="row">
+
+
+                <input ng-model="name" type="text" class="form-control" placeholder="Name" value="Name">
+                <input ng-model="interest" type="text" class="form-control" placeholder="Interest add 1" value="Interest">
+                <input ng-model="bookmark" type="text" class="form-control" placeholder="Bookmark add 1" value="Bookmarks"
+                       onkeydown = "if (event.keyCode == 13)
+                      document.getElementById('btn').click()">
+
+
+                <button ng-click="editaccount.editaccount(name,interest,bookmark)" type="button" class="btn btn-primary btn-lg btn-block">Update My Info</button>
+
+
+
+                User account data goes here.
+                <p id="acc_id"></p>
+                <p id="accName"></p>
+                <p id="accEmail"></p>
+                <p id="accBookMarks"></p>
+                <p id="accInt"></p>
+
+
+            </div>
+        </div>
+    </div>
+
+</head>

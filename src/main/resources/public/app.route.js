@@ -101,6 +101,12 @@
             controller: 'logoutController',
             controllerAs: 'logout'
           })
+          .state('editaccount', {
+            url: '/editaccount',
+            templateUrl: 'account/editaccount.html',
+            controller: 'editaccountController',
+            controllerAs: 'editaccount'
+          })
         ;
     };
 
