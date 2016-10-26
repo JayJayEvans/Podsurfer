@@ -27,13 +27,8 @@
             //vm.token = "true"
         };
 
-<<<<<<< HEAD
-        // Add Error Scenario
-            var error = function(response){
-=======
         // Add Error Scenariovar
         var error = function(response){
->>>>>>> 069bf7b3307fe716cca7510f83f4252ee7cda0cc
             vm.successful = false;
             //vm.token = "false";
             //console.log

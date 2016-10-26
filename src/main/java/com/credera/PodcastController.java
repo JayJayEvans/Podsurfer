@@ -50,7 +50,7 @@ public class PodcastController {
     	
     	// Setup some parameter mapping for the API parameters
     	MultiValueMap<String, String> podcastParameters = new LinkedMultiValueMap<String, String>();
-    	podcastParameters.add("Authorization", "Bearer " + authorization);
+    	podcastParameters.add("Authorization", /*"Bearer " +  this is taken care of in angular */ authorization);
     	podcastParameters.add("name", name);
     	
     	// Declare a Rest Template to Post to the Credera API
