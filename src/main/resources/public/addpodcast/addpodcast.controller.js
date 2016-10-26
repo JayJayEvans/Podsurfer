@@ -6,35 +6,36 @@
 
     angular
         .module('app')
-        .controller('addController', addController);
+        .controller('addpodcastController', addpodcastController);
 
-    addController.$inject = ['addService', '$cookies'];
+    addpodcastController.$inject = ['addService', '$cookies'];
 
-    function (addController, $cookies){
+    function addpodcastController(addService, $cookies){
     //alert('Our site uses cookies ;)');
     var vm = this;
-    vm.title = 'Add';
-    vm.token = "";
+    vm.title = 'Upload';
+    //vm.token = "";
 
-    function AddPodcast(){
+        vm.addpodcast = function addpodcast(name, link, release, producer, length, description) {
 
         // Add Success Scenario
         var success = function(response){
             console.log('Added a New Podcast!');
             vm.successful = true;
-            vm.token = "true"
+            //vm.token = "true"
         };
 
         // Add Error Scenariovar
         error = function(response){
             vm.successful = false;
-            vm.token = "false";
+            //vm.token = "false";
             //console.log
-            console.error('Failed to Create a New Podcast!');
+            document.getElementById("upload-fail").innerHTML = 'Failed to login';
+            console.error('Failed to Create a New Podcast or authorization failure!');
         };
 
         //console.log(vm);
-        return addService.addPodcast(vm.name, vm.link, vm.release, vm.producer, vm.length, vm.description, vm.tag, $cookies.get('token')).then(success, error);
+        return addService.addPodcast(name, link, release, producer, length, description).then(success, error);
 
     }
 
