@@ -13,6 +13,8 @@ public class PodcastService
 	public class PodcastRequest 
 	{
 		// Member Variables
+		private String authorization;
+		
 		private String name;
 		private String link;
 		private String release;
@@ -22,6 +24,7 @@ public class PodcastService
 		private String imageUrl;
 		
 		public PodcastRequest() {
+			this.authorization = "";
 			this.name = "";
 			this.link = "";
 			this.release = "";
@@ -31,12 +34,14 @@ public class PodcastService
 			this.imageUrl = "";
 		}
 		
-		public PodcastRequest(String name) {
+		public PodcastRequest(String authorization, String name) {
+			this.authorization = authorization;
 			this.name = name;
 		}
 		
-		public PodcastRequest(String name, String link, String release, String producer, String length,
+		public PodcastRequest(String authorization, String name, String link, String release, String producer, String length,
 				String description, String imageUrl) {
+			this.authorization = authorization;
 			this.name = name;
 			this.link = link;
 			this.release = release;
@@ -44,6 +49,14 @@ public class PodcastService
 			this.length = length;
 			this.description = description;
 			this.imageUrl = imageUrl;
+		}
+		
+		public String getAuthorization() {
+			return authorization;
+		}
+		
+		public void setAuthorization(String authorization) {
+			this.authorization = authorization;
 		}
 
 		public String getName() {
