@@ -23,7 +23,11 @@
 
             var addRequest = {
                 method: 'POST',
+<<<<<<< HEAD
                 url: 'https://podsurfer-4.herokuapp.com/api/podcast',
+=======
+                url: 'https://podsurfer-4.herokuapp.com/api/user',
+>>>>>>> 069bf7b3307fe716cca7510f83f4252ee7cda0cc
                     headers:
                 {
 
