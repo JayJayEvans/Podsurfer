@@ -16,11 +16,13 @@
     vm.title = 'Upload';
     //vm.token = "";
 
+
         vm.addpodcast = function addpodcast(name, link, release, producer, length, description) {
 
         // Add Success Scenario
         var success = function(response){
             console.log('Added a New Podcast!');
+            $cookies.putObject('podID',response._id);
             vm.successful = true;
             //vm.token = "true"
         };
@@ -35,7 +37,7 @@
         };
 
         //console.log(vm);
-        return addService.addPodcast(name, link, release, producer, length, description).then(success, error);
+        return addService.addP(name, link, release, producer, length, description).then(success, error);
 
     }
 
