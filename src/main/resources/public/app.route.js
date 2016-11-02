@@ -77,11 +77,11 @@
           controller: 'loginController',
           controllerAs: 'login'
         })
-        .state('singular-podcast', {
-          url: '/singular-podcast',
-          templateUrl: 'singular-podcast/singular-podcast.html',
-          controller: 'singular-podcastController',
-          controllerAs: 'singular-podcast'
+        .state('singularPodcast', {
+          url: '/singularPodcast',
+          templateUrl: 'singularPodcast/singularPodcast.html',
+          controller: 'singularPodcastController',
+          controllerAs: 'singularPodcast'
         })
           .state('register', {
             url: '/register',
