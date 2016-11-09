@@ -6,31 +6,27 @@
 
     angular
         .module('app')
-        .service('searchPodcasts', searchPodcasts);
+        .service('grabPodcasts', grabPodcasts);
 
     searchPodcasts.$inject = ['$http'];
 
-    function searchPodcasts($http) {
+    function grabPodcasts($http) {
 
         var exports = {
-            fetchPodcasts: fetchPodcasts
+            getPodcasts: getPodcasts
         };
 
         return exports;
 
-        function fetchPodcasts( ) {
+        function getPodcasts( ) {
+            
             // The login request
             var searchRequest = {
                 method: 'GET',
-                url: 'https://podsurfer-#.herokuapp.com/api/podcast/',
-                data: {
-                    _id: userEmail,
-                    password: userPassword
-                    //Tims email: timarterbury@gmail.com
-                    //Tims password: lolZ254@
-                }
+                url: 'https://podsurfer-4.herokuapp.com/api/podcast/',
             }
-            return $http(loginRequest);
+            
+            return $http(searchRequest);
         }
     }
 })();
