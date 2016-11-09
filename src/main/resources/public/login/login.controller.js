@@ -22,8 +22,8 @@
         var value = $cookies.getObject('userObj');
         
         // After saving cookie, redirect page to account page
-        //location.reload();
         location.href = '#/account';
+        location.reload();
 
         //console.log(value);
       };
@@ -35,7 +35,7 @@
       };
 
       return loginWithCredentials.checkCredentials(email, password).then(success, error); 
-    }
+    };
 
 
   }

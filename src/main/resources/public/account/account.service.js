@@ -15,24 +15,24 @@
         if(value != null)
             value = value.substring(10, value.length - 2);
 
-            var exports = {
-                fetchUser: fetchUser
-            };
+        var exports = {
+            fetchUser: fetchUser
+        };
 
         return exports;
 
 
         function fetchUser() {
-            var userRequest = {
-                method: 'GET',
-                url: 'https://podsurfer-4.herokuapp.com/api/user/me',
-                headers: {
-
-                    Authorization: 'Bearer ' + value
-                }
-
+          
+          var userRequest = {
+            method: 'GET',
+            url: 'https://podsurfer-4.herokuapp.com/api/user/me',
+            headers: {
+              Authorization: 'Bearer ' + value
             }
-            return $http(userRequest);
+          }
+          
+          return $http(userRequest);
         }
     }
 })();

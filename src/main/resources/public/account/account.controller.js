@@ -40,7 +40,7 @@
       };
 
       return myAccount.fetchUser().then(success, error);
-    }
+    };
     
     // When the page loads, automatically invoke this function
     vm.account();
