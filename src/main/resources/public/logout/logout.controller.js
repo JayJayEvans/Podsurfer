@@ -21,7 +21,10 @@
                 var value = $cookies.get('userObj');
                 if(value != null){
                     $cookies.remove('userObj');
-                    location.reload();
+                    
+                    // Redirect to home page
+                    location.href = '#';
+                    //location.reload();
                 }
 
             };

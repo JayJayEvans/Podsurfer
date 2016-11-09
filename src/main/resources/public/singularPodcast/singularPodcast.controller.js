@@ -23,6 +23,7 @@
       vm.producer = '';
       vm.length = '';
       vm.description = '';
+      vm.imageUrl = '';
       
       
       //var temp;
@@ -38,6 +39,7 @@
           vm.release = response.data.release;
           vm.length = response.data.length;
           vm.description = response.data.description;
+          vm.imageUrl = response.data.imageUrl;
           
           console.log('Got podcast id num: ' + podcastId);          
         };
