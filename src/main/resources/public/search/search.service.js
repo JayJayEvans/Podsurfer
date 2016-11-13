@@ -6,11 +6,11 @@
 
     angular
         .module('app')
-        .service('grabPodcasts', grabPodcasts);
+        .service('searchService', searchService);
 
-    grabPodcasts.$inject = ['$http'];
+    searchService.$inject = ['$http'];
 
-    function grabPodcasts($http) {
+    function searchService($http) {
 
         var exports = {
             getPodcasts: getPodcasts
@@ -18,7 +18,7 @@
 
         return exports;
 
-        function getPodcasts( ) {
+        function getPodcasts() {
             
             // The login request
             var searchRequest = {

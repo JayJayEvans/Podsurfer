@@ -12,10 +12,19 @@
     
     
     <!-- EACH PODCAST WILL BE WRAPPED IN THIS LINK -->
-    <a ui-sref="podcast({ podcastId: pid })">A podcast</a>
-    
-    
-    <a ui-sref="podcast({ podcastId: '57f1df3bedc3f1110068367d' })">TEST podcast</a>
+    <!-- The Podcast Search Results -->
+    <div>
+      <a ng-repeat="podcast in search.podcasts" ui-sref="podcast({ podcastId: '{{podcast._id}}' })">
+        <h3>{{podcast.name}}</h3>
+        <p>{{podcast.length}}</p>
+        <ul>
+          <li ng-repeat="tag in podcast.tags">{{tag}}</li>
+        </ul>
+      </a>
+    </div>
+
+    <!-- A Test for a basic podcast link -->
+    <!--<a ui-sref="podcast({ podcastId: '57f1df3bedc3f1110068367d' })">TEST podcast</a>-->
     
     
   </div>

@@ -7,7 +7,7 @@
 
   accountController.$inject = ['myAccount', '$cookies'];
 
-  function accountController( myAccount, $cookies) {
+  function accountController(myAccount, $cookies) {
     var vm = this;
     vm.title = 'Account';
     
