@@ -8,7 +8,7 @@
         .module('app')
         .service('grabPodcasts', grabPodcasts);
 
-    searchPodcasts.$inject = ['$http'];
+    grabPodcasts.$inject = ['$http'];
 
     function grabPodcasts($http) {
 

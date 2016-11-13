@@ -9,13 +9,19 @@
 
     angular
         .module('app')
-        .controller('singularPodcastController', singularPodcastController);
+        .controller('podcastController', podcastController);
 
-    singularPodcastController.$inject = ['$http', 'getPodcastWithId'];
+    podcastController.$inject = ['$http', '$stateParams', 'getPodcastWithId'];
 
-    function singularPodcastController($http, getPodcastWithId) {
+    function podcastController($http, $stateParams, getPodcastWithId) {
+            
       var vm = this;
-      vm.title = 'Single Podcast';
+      //vm.title = 'Single Podcast';
+      
+      // Grab the State Parameter (from the app.route.js that will load the URL)
+      vm.podcastId = $stateParams.podcastId;
+      //console.log(vm.podcastId);
+      
       
       vm.name = '';
       vm.link = '';
@@ -41,7 +47,8 @@
           vm.description = response.data.description;
           vm.imageUrl = response.data.imageUrl;
           
-          console.log('Got podcast id num: ' + podcastId);          
+          console.log('Got podcast id num: ' + podcastId);  
+          //console.log(vm.name + ' ' + vm.release + ' ' + vm.description);        
         };
   
         // Error Scenario
@@ -51,7 +58,9 @@
         };
   
         return getPodcastWithId.apiCall(podcastId).then(success, error); 
-      }
+      };
+      
+      vm.getPodcast(vm.podcastId);
       
     }
 

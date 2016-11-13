@@ -9,5 +9,14 @@
     style="font-size: 48px; height: 90px; outline: none; border: 1px solid #dbdbdb;
     border-bottom: solid #31A6FF; border-radius: 0; font-weight: 900; margin-bottom: 50px;"> -->
     <button ng-click="search.search(searchQuery)" type="button" class="btn btn-primary btn-lg btn-block">Search</button>
+    
+    
+    <!-- EACH PODCAST WILL BE WRAPPED IN THIS LINK -->
+    <a ui-sref="podcast({ podcastId: pid })">A podcast</a>
+    
+    
+    <a ui-sref="podcast({ podcastId: '57f1df3bedc3f1110068367d' })">TEST podcast</a>
+    
+    
   </div>
 </div>

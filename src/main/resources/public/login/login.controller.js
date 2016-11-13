@@ -22,9 +22,10 @@
         var value = $cookies.getObject('userObj');
         
         // After saving cookie, redirect page to account page
+        
         location.reload();
         location.href = '#/account';
-
+        
         //console.log(value);
       };
       

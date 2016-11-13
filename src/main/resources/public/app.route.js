@@ -18,7 +18,7 @@
         })
         .state('about', {
           url: '/about',
-          views: {
+          views : {
             '': {
               templateUrl: 'about/about.html',
               controller: 'aboutController',
@@ -77,11 +77,11 @@
           controller: 'loginController',
           controllerAs: 'login'
         })
-        .state('singularPodcast', {
-          url: '/singularPodcast',
-          templateUrl: 'singularPodcast/singularPodcast.html',
-          controller: 'singularPodcastController',
-          controllerAs: 'singularPodcast'
+        .state('podcast', {
+          url: '/podcast/{podcastId}',
+          templateUrl: 'podcast/podcast.html',
+          controller: 'podcastController',
+          controllerAs: 'podcast'
         })
           .state('register', {
             url: '/register',
