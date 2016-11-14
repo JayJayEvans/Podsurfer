@@ -1,5 +1,5 @@
 /**
- * Created by Jason on 10/14/2016.
+ * Created by Sneaky Teem on 10/14/2016.
  */
 (function() {
     'use strict';

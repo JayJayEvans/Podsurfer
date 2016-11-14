@@ -1,5 +1,5 @@
 /**
- *Created by Hank Harrison on 10/18/2016
+ *Created by Sneaky Teem
  * Update History:
  *
  */
@@ -16,37 +16,20 @@
     function podcastController($http, $stateParams, getPodcastWithId) {
             
       var vm = this;
-      //vm.title = 'Single Podcast';
-      
-      // Grab the State Parameter (from the app.route.js that will load the URL)
-      vm.podcastId = $stateParams.podcastId;
-      //console.log(vm.podcastId);
-      
-      
-      vm.name = '';
-      vm.link = '';
-      vm.release = '';
-      vm.producer = '';
-      vm.length = '';
-      vm.description = '';
-      vm.imageUrl = '';
-      
-      
-      //var temp;
 
-      // Get podcast function requires a podcast id to grab
+      // Grab the State Parameter podcastId
+      // (from the app.route.js that will load in the URL)
+      vm.podcastId = $stateParams.podcastId;
+      vm.podcastObj = [];
+            
+
+      // Get podcast function requires a podcast id to grab from Credera API
       vm.getPodcast = function getPodcast(podcastId) {
         
         // Success Scenario
         var success = function(response) {
-          
-          vm.name = response.data.name;
-          vm.link = response.data.link;
-          vm.release = response.data.release;
-          vm.length = response.data.length;
-          vm.description = response.data.description;
-          vm.imageUrl = response.data.imageUrl;
-          
+          // Grab the podcast object
+          vm.podcastObj = response.data;
           console.log('Got podcast id num: ' + podcastId);  
           //console.log(vm.name + ' ' + vm.release + ' ' + vm.description);        
         };
@@ -60,8 +43,8 @@
         return getPodcastWithId.apiCall(podcastId).then(success, error); 
       };
       
+      // Invoke the getPodcast function upon page load
       vm.getPodcast(vm.podcastId);
-      
     }
 
 })();
