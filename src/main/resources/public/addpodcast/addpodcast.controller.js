@@ -46,5 +46,34 @@
 
     }
 
+        vm.editpodcast = function editpodcast(name, link, release, producer, length, episodes, tags, description, id) {
+
+            // Add Success Scenario
+            var success = function(response){
+                console.log('Edited a Podcast!');
+                $cookies.putObject('podID',response._id);
+                vm.successful = true;
+                //vm.token = "true"
+            };
+
+            // Add Error Scenario
+            var error = function(response){
+                vm.successful = false;
+                //vm.token = "false";
+                //console.log
+                document.getElementById("edit-fail").innerHTML = 'Failed to login';
+                console.error('Failed to Edit a Podcast or authorization failure!');
+            };
+
+            var episodes = (vm.episodes ? vm.episodes.split(",") : []);
+            var tags = (vm.tags ? vm.tags.split(",") : []);
+
+            //console.log(vm);
+            console.log(episodes);
+            console.log(tags);
+            return addService.editP(name, link, release, producer, length, episodes, tags, description, id).then(success, error);
+
+        }
+
 }
 })();
