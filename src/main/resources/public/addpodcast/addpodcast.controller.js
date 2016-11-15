@@ -36,10 +36,12 @@
             console.error('Failed to Create a New Podcast or authorization failure!');
         };
 
-        var episodes = (vm.episodes ? vm.episodes.split(" ") : []);
-        var tags = (vm.tags ? vm.tags.split(" ") : []);
+        var episodes = (vm.episodes ? vm.episodes.split(",") : []);
+        var tags = (vm.tags ? vm.tags.split(",") : []);
 
         //console.log(vm);
+        console.log(episodes);
+        console.log(tags);
         return addService.addP(name, link, release, producer, length, episodes, tags, description).then(success, error);
 
     }
