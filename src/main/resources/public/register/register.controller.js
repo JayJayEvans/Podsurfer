@@ -32,7 +32,7 @@
             };
 
             return registerUser.sendRegister(name, email, password).then(success, error);
-        }
+        };
     }
 
 })();
