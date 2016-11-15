@@ -20,11 +20,14 @@
   <script src="contact/contact.service.js"></script>
   <script src="home/home.controller.js"></script>
   <script src="home/home.service.js"></script>
-  <script src="angular.js"></script>
+  
+  <!-- We already included angular above, lol, this was causing an error -->
+  <!-- <script src="angular.js"></script> -->
   <script src="angular-cookies.js"></script>
 
   <!-- CONROLLERS FOR NEW PAGES WE ADDED -->
   <script src="search/search.controller.js"></script>
+  <script src="search/search.service.js"></script>
   <script src="popular/popular.controller.js"></script>
   <script src="suggested/suggested.controller.js"></script>
   <script src="favorites/favorites.controller.js"></script>
@@ -32,8 +35,8 @@
   <script src="account/account.service.js"></script>
   <script src="login/login.controller.js"></script>
   <script src="login/login.service.js"></script>
-  <script src="singular-podcast/singular-podcast.controller.js"></script>
-  <script src="singular-podcast/singular-podcast.service.js"></script>
+  <script src="podcast/podcast.controller.js"></script>
+  <script src="podcast/podcast.service.js"></script>
   <script src="register/register.controller.js"></script>
   <script src="register/register.service.js"></script>
   <script src="logout/logout.controller.js"></script>
@@ -63,13 +66,8 @@
         <li><a ui-sref="favorites"><i class="fa fa-heart"></i> Favorites</a></li>
         <li><a ui-sref="account"><i class="fa fa-group"></i> Account</a></li>
         <li><a ui-sref="addpodcast"><i class="fa fa-comment"></i> Add Podcast</a></li>
-        <li><a ui-sref="singular-podcast"><i class="fa fa-comment"></i> Single Podcast TEST</a></li>
         <li><a ui-sref="login"><i class="fa fa-comment"></i> Login</a></li>
         <li><a ui-sref="logout"><i class="fa fa-comment"></i> Logout</a></li>
-        <li><a ui-sref="singular-podcast"><i class="fa fa-comment"></i> Single Podcast TEST</a></li>
-        <li><a ui-sref="login"><i class="fa fa-comment"></i> Login</a></li>
-        <li><a ui-sref="logout"><i class="fa fa-comment"></i> Logout</a></li>
-        
       </ul>
     </div>
   </nav>

@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="row">
+    <p id="podcast-fail"></p>
+    
+    <h2>{{podcast.podcastObj.name}}</h2>
+    <img src="{{podcast.podcastObj.imageUrl}}" alt="">
+    <p>Length: {{podcast.podcastObj.length}}</p>
+    <p>Release Date: {{podcast.podcastObj.release}}</p>
+    <a href="{{podcast.podcastObj.link}}">View Podcast Website</a>
+    <p>{{podcast.podcastObj.description}}</p>
+    
+    <!-- Tags -->
+    <ul class="podcastTags">
+      <li ng-repeat="tag in podcast.podcastObj.tags">{{tag}}</li>
+    </ul>
+    
+    <!-- Episodes -->
+    <div>
+      <h3>Episodes</h3>
+      <div ng-repeat="episode in podcast.podcastObj.episodes">
+        <p>{{episode.number}}</p>
+        <h4>{{episode.name}}</h4>
+        <img src="{{episode.imageUrl}}" alt="">
+        <a href="{{episode.link}}">See Episode</a>
+        <p>{{episode.description}}</p>
+      </div>
+    </div>
+    
+  </div>
+
+</div>

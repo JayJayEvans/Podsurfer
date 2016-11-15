@@ -1,6 +1,7 @@
 /**
  * Created by Jason on 10/16/2016.
  */
+ /*
 (function() {
     'use strict';
 
@@ -34,3 +35,4 @@
         }
     }
 })();
+*/

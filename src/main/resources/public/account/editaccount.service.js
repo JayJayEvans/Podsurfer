@@ -1,6 +1,7 @@
 /**
  * Created by Jason on 10/26/2016.
  */
+ /*
 (function() {
     'use strict';
 
@@ -40,4 +41,4 @@
             return $http(userRequest);
         }
     }
-})();
+})();*/

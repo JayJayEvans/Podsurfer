@@ -20,31 +20,34 @@
 
 <!-- This is old, just playing with the css below. -->
 
+  <!--<h1>Fixed Top Navigation Bar</h1>
+  <h2>Scroll this page to see the effect</h2>
+  <h2>The navigation bar will stay at the top of the page while scrolling</h2> -->
 
-<head>
-<div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
-    <!--<h1>Fixed Top Navigation Bar</h1>
-    <h2>Scroll this page to see the effect</h2>
-    <h2>The navigation bar will stay at the top of the page while scrolling</h2> -->
+<div class="container" style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+  <div class="row">
+    <h3 style="font-size:40px;" class="text-center">{{account.title}}</h3>
+  </div>
+  <hr class="row" />
+  <div class="row">
+    
+    <h2>{{account.name}}</h2>
+    <!-- <p>{{account._id}}</p> -->
+    <p>Account Email: {{account.email}}</p>
+    
+    <ul>
+      <lh>Interests</lh>
+      <li ng-repeat="item in account.interests">{{item}}</li>
+    </ul>
+    
+    <ul>
+      <lh>Bookmarks</lh>
+      <li ng-repeat="podcast in account.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
+    </ul>
 
-    <div class="container">
-        <div class="row">
-            <h3 style="font-size:40px;" class="text-center">{{account.title}}</h3>
-        </div>
-        <hr class="row" />
-        <div class="row">
-            User account data goes here.
-            <p id="acc_id"></p>
-            <p id="accName"></p>
-            <p id="accEmail"></p>
 
-
-
-            <button ng-click="account.account()" type="button" class="btn btn-primary btn-lg btn-block">Get My Info</button>
-            <a type="button" href="/#/editaccount" class="btn btn-primary btn-lg btn-block" >Register</a>
-
-        </div>
-    </div>
+    <!-- This button is unneeded now because the account() function is called in the javascript -->
+    <!-- <button ng-click="account.account()" type="button" class="btn btn-primary btn-lg btn-block">Get My Info</button> -->
+    <!--<a type="button" href="/#/editaccount" class="btn btn-primary btn-lg btn-block" >Register</a>-->
+  </div>
 </div>
-
-</head>

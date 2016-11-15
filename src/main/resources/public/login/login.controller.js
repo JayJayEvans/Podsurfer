@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-angular
+  angular
     .module('app')
     .controller('loginController',loginController);
 
@@ -20,10 +20,13 @@ angular
         console.log('Logged In User!');
         $cookies.putObject('userObj',response.data);
         var value = $cookies.getObject('userObj');
+        
+        // After saving cookie, redirect page to account page
+        
         location.reload();
         location.href = '#/account';
-
-        console.log(value);
+        
+        //console.log(value);
       };
       
       // Login Error Scenario
@@ -33,7 +36,7 @@ angular
       };
 
       return loginWithCredentials.checkCredentials(email, password).then(success, error); 
-    }
+    };
 
 
   }

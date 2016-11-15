@@ -1,36 +1,32 @@
 /**
- * Created by Jason on 10/14/2016.
+ * Created by Sneaky Teem on 10/14/2016.
  */
 (function() {
     'use strict';
 
     angular
         .module('app')
-        .service('searchPodcasts', searchPodcasts);
+        .service('searchService', searchService);
 
-    searchPodcasts.$inject = ['$http'];
+    searchService.$inject = ['$http'];
 
-    function searchPodcasts($http) {
+    function searchService($http) {
 
         var exports = {
-            fetchPodcasts: fetchPodcasts
+            getPodcasts: getPodcasts
         };
 
         return exports;
 
-        function fetchPodcasts( ) {
+        function getPodcasts() {
+            
             // The login request
             var searchRequest = {
                 method: 'GET',
-                url: 'https://podsurfer-#.herokuapp.com/api/podcast/',
-                data: {
-                    _id: userEmail,
-                    password: userPassword
-                    //Tims email: timarterbury@gmail.com
-                    //Tims password: lolZ254@
-                }
+                url: 'https://podsurfer-4.herokuapp.com/api/podcast/',
             }
-            return $http(loginRequest);
+            
+            return $http(searchRequest);
         }
     }
 })();

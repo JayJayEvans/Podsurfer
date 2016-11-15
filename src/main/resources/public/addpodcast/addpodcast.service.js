@@ -8,9 +8,10 @@
     addService.$inject = ['$http', '$cookies'];
 
     function addService($http, $cookies){
-        var value = $cookies.get('userObj');
-        if(value != null)
-            value = value.substring(10, value.length - 2);
+        var token = $cookies.get('userObj');
+        // console.log(token);
+        if(token != null)
+            token = token.substring(10, token.length - 2);
 
 
         var exports = {
@@ -20,13 +21,14 @@
 
         function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, descriptionIn){
 
+            //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
 
             var addRequest = {
                 method: 'POST',
                 url: 'https://podsurfer-4.herokuapp.com/api/podcast',
                 headers:
                 {
-                    Authorization: 'Bearer ' + value
+                    Authorization: 'Bearer ' + token
                 },
                 data: {
                     name : nameIn,
