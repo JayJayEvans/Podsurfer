@@ -19,7 +19,7 @@
         };
         return exports;
 
-        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, descriptionIn){
+        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, episodesIn, tagsIn, descriptionIn){
 
             //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
 
@@ -36,6 +36,8 @@
                     release : releaseIn,
                     producer : producerIn,
                     length : lengthIn,
+                    episodes: episodesIn,
+                    tags: tagsIn,
                     description : descriptionIn
 
 
