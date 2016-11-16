@@ -83,30 +83,39 @@
           controller: 'podcastController',
           controllerAs: 'podcast'
         })
-          .state('register', {
-            url: '/register',
-            templateUrl: 'register/register.html',
-            controller: 'registerController',
-            controllerAs: 'register'
-          })
-          .state('addpodcast', {
-            url: '/addpodcast',
-            templateUrl: 'addpodcast/addpodcast.html',
-            controller: 'addpodcastController',
-            controllerAs: 'addpodcast'
-          })
-          .state('logout', {
-            url: '/logout',
-            templateUrl: 'logout/logout.html',
-            controller: 'logoutController',
-            controllerAs: 'logout'
-          })
-          .state('editaccount', {
-            url: '/editaccount',
-            templateUrl: 'account/editaccount.html',
-            controller: 'editaccountController',
-            controllerAs: 'editaccount'
-          })
+        .state('register', {
+          url: '/register',
+          templateUrl: 'register/register.html',
+          controller: 'registerController',
+          controllerAs: 'register'
+        })
+        .state('addpodcast', {
+          url: '/addpodcast',
+          templateUrl: 'addpodcast/addpodcast.html',
+          controller: 'addpodcastController',
+          controllerAs: 'addpodcast'
+        })
+        .state('logout', {
+          url: '/logout',
+          templateUrl: 'logout/logout.html',
+          controller: 'logoutController',
+          controllerAs: 'logout'
+        })
+        .state('editaccount', {
+          url: '/editaccount',
+          templateUrl: 'account/editaccount.html',
+          controller: 'editaccountController',
+          controllerAs: 'editaccount'
+        })
+        .state('review', {
+          url: '/review/{reviewId}',
+          templateUrl: 'review/review.html',
+          controller: 'reviewController',
+          controllerAs: 'review'
+        })
+        
+        
+        
         ;
     };
 

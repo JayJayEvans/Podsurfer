@@ -11,10 +11,10 @@
     addpodcastController.$inject = ['addService', '$cookies'];
 
     function addpodcastController(addService, $cookies){
-    //alert('Our site uses cookies ;)');
-    var vm = this;
-    vm.title = 'Upload';
-    //vm.token = "";
+        
+        
+        var vm = this;
+        vm.title = 'Upload';
 
 
         vm.addpodcast = function addpodcast(name, link, release, producer, length, description) {

@@ -4,7 +4,7 @@
     <p id="podcast-fail"></p>
     
     <h2>{{podcast.podcastObj.name}}</h2>
-    <img src="{{podcast.podcastObj.imageUrl}}" alt="">
+    <img src="{{podcast.podcastObj.imageURL}}" alt="">
     <p>Length: {{podcast.podcastObj.length}}</p>
     <p>Release Date: {{podcast.podcastObj.release}}</p>
     <a href="{{podcast.podcastObj.link}}">View Podcast Website</a>
@@ -21,11 +21,39 @@
       <div ng-repeat="episode in podcast.podcastObj.episodes">
         <p>{{episode.number}}</p>
         <h4>{{episode.name}}</h4>
-        <img src="{{episode.imageUrl}}" alt="">
+        <img src="{{episode.imageURL}}" alt="">
         <a href="{{episode.link}}">See Episode</a>
         <p>{{episode.description}}</p>
       </div>
     </div>
+    
+    <button class="reviewBtn btn btn-primary btn-lg btn-block" onclick="toggleVisibility('reviewForm');">Write A Review</button>
+    
+    <div id="reviewForm">
+      
+      <p class="errorAlert" id="review-create-fail"></p>
+      
+      <input ng-model="reviewName" type="text" class="form-control" placeholder="ReviewTitle">
+      <input ng-model="reviewRating" type="text" class="form-control" placeholder="Rating">
+      <input ng-model="reviewBody" type="text" class="form-control" placeholder="Your review . . .">
+      <input ng-model="reviewSpoilers" type="text" class="form-control" placeholder="Spoilers: true or false">
+      
+      <button ng-click="podcast.addReview(reviewName, reviewRating, reviewBody, reviewSpoilers)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+      
+    </div>
+  
+    
+    <!-- Reviews -->
+    <div>
+      <h3>Reviews</h3>
+      <div ng-repeat="review in podcast.reviews">
+        <h5>{{review.name}}</h5>
+        <p>Rating: {{review.rating}}</p>
+        <p>{{review.review}}</p>
+        <p>By: {{review.reviewer.name}}</p>
+      </div>
+    </div>
+    
     
   </div>
 

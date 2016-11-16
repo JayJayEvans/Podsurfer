@@ -26,3 +26,13 @@
   margin-top: 20px;
   
 }
+
+#reviewForm {
+  display: none;
+}
+
+.errorAlert {
+  margin: 5px 0px;
+  font-weight: bold;
+  color: #ff2525;
+}
