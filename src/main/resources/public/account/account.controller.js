@@ -5,9 +5,9 @@
       .module('app')
       .controller('accountController',accountController);
 
-  accountController.$inject = ['myAccount', '$cookies'];
+  accountController.$inject = ['accountService', '$cookies'];
 
-  function accountController(myAccount, $cookies) {
+  function accountController(accountService, $cookies) {
     var vm = this;
     vm.title = 'Account';
     
@@ -39,8 +39,36 @@
         alert('You must be signed in to view your profile');
       };
 
-      return myAccount.fetchUser().then(success, error);
+      return accountService.getUserInfo().then(success, error);
     };
+    
+    vm.addInterest = function addInterest(interest) {
+      
+      var success = function(response) {
+          console.log('Interest added!');
+           
+          // Close Review Form
+          toggleVisibility('interestForm');
+                    
+          // Refresh podcast page with new review
+          vm.account();        
+        };
+  
+        // Review Error Scenario
+        var error = function(response) {
+          console.log('Interest add failed');
+          document.getElementById('interest-add-fail').innerHTML = response.data;
+          console.log(response.data);
+        };
+        
+        accountService.putInterest(interest).then(success, error);
+        
+        return;       
+
+      
+      
+    };
+    
     
     // When the page loads, automatically invoke this function
     vm.account();

@@ -6,33 +6,55 @@
 
     angular
         .module('app')
-        .service('myAccount', myAccount);
+        .service('accountService', accountService);
 
-    myAccount.$inject = ['$http', '$cookies'];
+    accountService.$inject = ['$http', '$cookies'];
 
-    function myAccount($http, $cookies) {
-        var value = $cookies.get('userObj');
-        if(value != null)
-            value = value.substring(10, value.length - 2);
+    function accountService($http, $cookies) {
+        
+        var token = $cookies.get('userObj');
+        if(token != null)
+            token = token.substring(10, token.length - 2);
 
         var exports = {
-            fetchUser: fetchUser
+            getUserInfo: getUserInfo,
+            putInterest: putInterest
         };
 
         return exports;
 
 
-        function fetchUser() {
+        function getUserInfo() {
           
-          var userRequest = {
+          var apiRequest = {
             method: 'GET',
             url: 'https://podsurfer-4.herokuapp.com/api/user/me',
             headers: {
-              Authorization: 'Bearer ' + value
+              Authorization: 'Bearer ' + token
             }
           }
           
-          return $http(userRequest);
+          return $http(apiRequest);
         }
+        
+        function putInterest(interest) {
+          
+          var apiRequest = {
+            method: 'PUT',
+            url: 'https://podsurfer-4.herokuapp.com/api/user/',
+            headers: {
+              Authorization: 'Bearer ' + token
+            },
+            data: {
+              interests: interest
+            }
+          }
+          
+          return $http(apiRequest);
+          
+          
+        }
+        
+        
     }
 })();

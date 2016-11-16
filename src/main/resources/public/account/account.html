@@ -40,10 +40,21 @@
       <li ng-repeat="item in account.interests">{{item}}</li>
     </ul>
     
+    <!-- Add Interest Form -->
+    <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('interestForm');">Add Interests</button>
+        
+    <div id="interestForm" style="display: none;">
+      <p class="errorAlert" id="interest-add-fail"></p>
+      <input ng-model="interest" type="text" class="form-control" placeholder="Interest">
+      <button ng-click="account.addInterest(interest)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </div>
+    
+    
     <ul>
       <lh>Bookmarks</lh>
       <li ng-repeat="podcast in account.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
     </ul>
+    
 
 
     <!-- This button is unneeded now because the account() function is called in the javascript -->
