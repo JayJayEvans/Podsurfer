@@ -25,7 +25,7 @@
             //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
             console.log(episodesIn);
             console.log(tagsIn);
-            
+
             var addRequest = {
                 method: 'POST',
                 url: 'https://podsurfer-4.herokuapp.com/api/podcast',
@@ -55,7 +55,7 @@
 
             var editRequest = {
                 method: 'PUT',
-                url: 'https://podsurfer-4.herokuapp.com/api/podcast' + idIn,
+                url: 'https://podsurfer-4.herokuapp.com/api/podcast/' + idIn,
                 headers:
                 {
                     Authorization: 'Bearer ' + token
