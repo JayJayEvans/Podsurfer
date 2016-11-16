@@ -19,14 +19,21 @@
             // Register Success Scenario
             var success = function(response) {
                 console.log('Registered User!');
-                $cookies.putObject('newUser',response.data);
-                var value = $cookies.getObject('newUser');
-
-                console.log(value);
+                $cookies.putObject('userObj', response.data);
+                /*
+                var token = $cookies.getObject('userObj');
+                console.log(token);
+                */
+                
+                // After saving cookie, redirect page to account page
+                location.reload();
+                location.href = '#/account';
             };
 
             // Register Error Scenario
             var error = function(response) {
+                document.getElementById("register-fail").innerHTML = response.data.message;
+                document.getElementById("register-fail-password").innerHTML = "Password must have 8 total characters, numbers, uppercase & lowercase letters, and a special character.";
                 console.error('Failed to Register User');
                 console.log(response.data);
             };

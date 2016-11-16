@@ -19,14 +19,13 @@
       var success = function(response) {
         console.log('Logged In User!');
         $cookies.putObject('userObj',response.data);
-        var value = $cookies.getObject('userObj');
         
         // After saving cookie, redirect page to account page
-        
         location.reload();
         location.href = '#/account';
         
-        //console.log(value);
+        // var token = $cookies.getObject('userObj');
+        //console.log(token);
       };
       
       // Login Error Scenario
