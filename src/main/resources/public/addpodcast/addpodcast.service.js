@@ -23,7 +23,9 @@
         function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, episodesIn, tagsIn, descriptionIn){
 
             //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
-
+            console.log(episodesIn);
+            console.log(tagsIn);
+            
             var addRequest = {
                 method: 'POST',
                 url: 'https://podsurfer-4.herokuapp.com/api/podcast',
@@ -52,7 +54,7 @@
             //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
 
             var editRequest = {
-                method: 'POST',
+                method: 'PUT',
                 url: 'https://podsurfer-4.herokuapp.com/api/podcast' + idIn,
                 headers:
                 {
