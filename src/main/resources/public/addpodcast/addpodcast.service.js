@@ -15,13 +15,16 @@
 
 
         var exports = {
-            addP:addP
+            addP:addP,
+            editP:editP
         };
         return exports;
 
-        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, descriptionIn){
+        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, episodesIn, tagsIn, descriptionIn){
 
             //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
+            console.log(episodesIn);
+            console.log(tagsIn);
 
             var addRequest = {
                 method: 'POST',
@@ -36,6 +39,8 @@
                     release : releaseIn,
                     producer : producerIn,
                     length : lengthIn,
+                    episodes: episodesIn,
+                    tags: tagsIn,
                     description : descriptionIn
 
 
@@ -43,6 +48,34 @@
             }
             return $http(addRequest);
         }
+
+        function editP(nameIn, linkIn, releaseIn, producerIn, lengthIn, episodesIn, tagsIn, descriptionIn, idIn){
+
+            //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
+
+            var editRequest = {
+                method: 'PUT',
+                url: 'https://podsurfer-4.herokuapp.com/api/podcast/' + idIn,
+                headers:
+                {
+                    Authorization: 'Bearer ' + token
+                },
+                data: {
+                    name : nameIn,
+                    link : linkIn,
+                    release : releaseIn,
+                    producer : producerIn,
+                    length : lengthIn,
+                    episodes: episodesIn,
+                    tags: tagsIn,
+                    description : descriptionIn
+
+
+                }
+            }
+            return $http(editRequest);
+        }
+
 
 
 
