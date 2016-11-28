@@ -18,7 +18,8 @@
 
         var exports = {
             getUserInfo: getUserInfo,
-            putInterest: putInterest
+            putInterest: putInterest,
+            killInterest: killInterest
         };
 
         return exports;
@@ -37,23 +38,55 @@
           return $http(apiRequest);
         }
         
-        function putInterest(interest) {
-          
+        function putInterest(interest,stolen) {
+          var arr = stolen;
+            arr.push(interest);
           var apiRequest = {
             method: 'PUT',
             url: 'https://podsurfer-4.herokuapp.com/api/user/',
             headers: {
               Authorization: 'Bearer ' + token
             },
+
             data: {
-              interests: interest
+              interests: arr
             }
+
+
           }
           
           return $http(apiRequest);
           
           
         }
+
+
+        function killInterest(interest,stolen) {
+            var arr = stolen;
+            var index = arr.indexOf(interest);    // <-- Not supported in <IE9
+            if (index !== -1) {
+                arr.splice(index, 1);
+            }
+            var apiRequest = {
+                method: 'PUT',
+                url: 'https://podsurfer-4.herokuapp.com/api/user/',
+                headers: {
+                    Authorization: 'Bearer ' + token
+                },
+
+                data: {
+                    interests: arr
+                }
+
+
+            }
+
+            return $http(apiRequest);
+
+
+        }
+
+
         
         
     }

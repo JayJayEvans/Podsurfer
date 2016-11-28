@@ -26,34 +26,42 @@
 
 <div class="container" style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
   <div class="row">
-    <h3 style="font-size:40px;" class="text-center">{{account.title}}</h3>
+    <h3 id="myAnchor" style="font-size:40px;" class="text-center">{{account.title}}</h3>
   </div>
   <hr class="row" />
   <div class="row">
     
-    <h2>{{account.name}}</h2>
+    <!--<h2>{{account.name}}</h2> -->
     <!-- <p>{{account._id}}</p> -->
-    <p>Account Email: {{account.email}}</p>
+    <p width="100"> Account Email: {{account.email}}</p>
     
-    <ul>
-      <lh>Interests</lh>
-      <li ng-repeat="item in account.interests">{{item}}</li>
-    </ul>
-    
+    <p>
+      <lh>Interests: </lh>
+          <li ng-repeat="item in account.interests">{{item}}</li>
+    </p>
+    <p>
+      <lh>Bookmarks: </lh>
+      <li ng-repeat="podcast in account.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
+    </p>
     <!-- Add Interest Form -->
-    <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('interestForm');">Add Interests</button>
+    <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('interestForm');">Add Interest</button>
+    <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('removalForm');">Remove Interest</button>
         
     <div id="interestForm" style="display: none;">
       <p class="errorAlert" id="interest-add-fail"></p>
       <input ng-model="interest" type="text" class="form-control" placeholder="Interest">
       <button ng-click="account.addInterest(interest)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
     </div>
+
+    <div id="removalForm" style="display: none;">
+      <p class="errorAlert" id="interest-remove-fail"></p>
+      <input ng-model="interest" type="text" class="form-control" placeholder="Interest">
+      <button ng-click="account.removeInterest(interest)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </div>
+
     
     
-    <ul>
-      <lh>Bookmarks</lh>
-      <li ng-repeat="podcast in account.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
-    </ul>
+
     
 
 

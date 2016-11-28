@@ -21,7 +21,7 @@
         $cookies.putObject('userObj',response.data);
         
         // After saving cookie, redirect page to account page
-        location.reload();
+        location.reload(true);
         location.href = '#/account';
         
         // var token = $cookies.getObject('userObj');

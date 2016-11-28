@@ -19,11 +19,13 @@
         vm.logout = function logout() {
           
           // If the user token cookie exists, remove it
-          if($cookies.get('userObj') != null) {            
-            
+          if($cookies.get('userObj') != null) {
+             location.reload();
             $cookies.remove('userObj');          
             // Redirect to home page
+
             location.href = '#';
+
           }
           else { // Else, alert that the user has not logged in
             alert("You're not logged in");
