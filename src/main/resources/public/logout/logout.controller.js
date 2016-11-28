@@ -23,7 +23,7 @@
              location.reload();
             $cookies.remove('userObj');          
             // Redirect to home page
-
+              alert('Successful Log-Out');
             location.href = '#';
 
           }
