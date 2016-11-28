@@ -19,7 +19,8 @@
         var exports = {
             getUserInfo: getUserInfo,
             putInterest: putInterest,
-            killInterest: killInterest
+            killInterest: killInterest,
+            nameChange: nameChange
         };
 
         return exports;
@@ -87,7 +88,35 @@
         }
 
 
-        
+
+
+
+        function nameChange(name) {
+
+            var apiRequest = {
+                method: 'PUT',
+                url: 'https://podsurfer-4.herokuapp.com/api/user/',
+                headers: {
+                    Authorization: 'Bearer ' + token
+                },
+
+                data: {
+                    name: name
+                }
+
+
+            }
+
+            return $http(apiRequest);
+
+
+        }
+
+
+
+
+
+
         
     }
 })();

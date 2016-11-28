@@ -107,6 +107,35 @@
 
 
 
+    vm.changeName = function changeName(name) {
+
+      var success = function(response) {
+        console.log('Name Changed!');
+
+        // Close Review Form
+        toggleVisibility('nameForm');
+
+        // Refresh podcast page with new review
+        vm.account();
+      };
+
+      // Review Error Scenario
+      var error = function(response) {
+        console.log('Name change failed');
+        document.getElementById('name-change-fail').innerHTML = response.data;
+        console.log(response.data);
+      };
+
+      accountService.nameChange(name).then(success, error);
+
+      return;
+
+
+
+    };
+
+
+
 
     
     

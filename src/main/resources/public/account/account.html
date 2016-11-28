@@ -46,6 +46,7 @@
     <!-- Add Interest Form -->
     <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('interestForm');">Add Interest</button>
     <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('removalForm');">Remove Interest</button>
+    <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('nameForm');">Change Name</button>
         
     <div id="interestForm" style="display: none;">
       <p class="errorAlert" id="interest-add-fail"></p>
@@ -57,6 +58,13 @@
       <p class="errorAlert" id="interest-remove-fail"></p>
       <input ng-model="interest" type="text" class="form-control" placeholder="Interest">
       <button ng-click="account.removeInterest(interest)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </div>
+
+
+    <div id="nameForm" style="display: none;">
+      <p class="errorAlert" id="name-change-fail"></p>
+      <input ng-model="name" type="text" class="form-control" placeholder="Name">
+      <button ng-click="account.changeName(name)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
     </div>
 
     
