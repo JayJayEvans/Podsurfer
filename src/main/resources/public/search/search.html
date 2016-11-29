@@ -4,7 +4,7 @@
   </div>
   <div class="row">
 
-    <input ng-model="searchText" type="text" class="form-control" placeholder="Name" value="Search">
+    <input ng-model="searchText" type="text" class="form-control" placeholder="Name" value="Search" autofocus>
     
     <button ng-click="search.search()" type="button" class="btn btn-primary btn-lg btn-block">Search</button>
     
@@ -13,7 +13,7 @@
     <!-- The Podcast Search Results -->
     <div>
       <a class="podcastSearchObj" ng-repeat="podcast in search.podcasts | filter:searchText" ui-sref="podcast({ podcastId: '{{podcast._id}}' })">
-        <h3>{{podcast.name}}</h3>
+        <h2>{{podcast.name}}</h2>
         <p>{{podcast.length}}</p>
         <ul class="podcastTags">
           <li ng-repeat="tag in podcast.tags">{{tag}}</li>
