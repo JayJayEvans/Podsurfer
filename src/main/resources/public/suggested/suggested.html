@@ -9,13 +9,10 @@
         <li ng-repeat="item in suggested.interests">{{item}}</li>
         </p>
         <p>
-            <lh>Bookmarks: </lh>
-        <li ng-repeat="podcast in suggested.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
-        </p>
 
         <!-- This is where we will display suggested podcasts based on Interests -->
         <div>
-            <a class="podcastSearchObj" ng-repeat="podcast in suggested.podcasts | filter:searchText" ui-sref="podcast({ podcastId: '{{podcast._id}}' })">
+            <a class="podcastSearchObj" ng-repeat="podcast in suggested.podcasts | filter:suggested.interests[0]" ui-sref="podcast({ podcastId: '{{podcast._id}}' })">
                 <h2>{{podcast.name}}</h2>
                 <p>{{podcast.length}}</p>
                 <ul class="podcastTags">

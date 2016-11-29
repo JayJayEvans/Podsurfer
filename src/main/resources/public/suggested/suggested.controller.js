@@ -21,18 +21,22 @@
 
     vm.suggested = function suggested() {
 
-      var success = function(response) {
+      var userInfoSuccess = function(response) {
+
 
         vm._id = response.data._id;
         vm.name = response.data.name;
         vm.email = response.data.email;
         vm.interests = response.data.interests;
         vm.bookmarks = response.data.bookmarks;
+
         // $cookies.putObject('userId',response.data._id);
+
+        //JSON.stringify(vm.interests);
 
       }
 
-      var error = function(response) {
+      var userInfoError = function(response) {
 
         console.error('Failed');
         console.error($cookies.get('userObj'))
@@ -41,30 +45,24 @@
         //alert('You must be signed in to view your profile');
       }
 
-      JSON.stringify(vm.interests);
+      // Success Scenario
+      var podcastSuccess = function(response) {
 
-      return suggestedService.getUserInfo().then(success, error);
+        vm.podcasts = response.data;
+        console.log('Retreived Podcasts');
+        console.log(vm.podcasts);
+      }
 
-    };
+      // Error Scenario
+      var podcastError = function(response) {
+        console.log('Failed to retreive podcasts');
+        console.log(response.data);
+      }
 
-    vm.getPodcasts = function getPodcasts(){
+      suggestedService.getUserInfo().then(userInfoSuccess, userInfoError);
+      suggestedService.getPodcasts().then(podcastSuccess, podcastError);
 
-        // Success Scenario
-        var success = function(response) {
-
-          vm.podcasts = response.data;
-          console.log('Retreived Podcasts');
-          console.log(vm.podcasts);
-        }
-
-        // Error Scenario
-        var error = function(response) {
-          console.log('Failed to retreive podcasts');
-          console.log(response.data);
-        }
-
-        return searchService.getPodcasts().then(success, error);
-
+      return;
     };
 
     // When the page loads, automatically invoke this function
