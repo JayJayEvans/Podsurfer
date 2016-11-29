@@ -13,10 +13,36 @@
         <a class="button-red" href="{{podcast.podcastObj.link}}">View Podcast Website</a>
       </div>
       
+      <div class="button favorite-button" ng-click="podcast.toggleFavoriteStatus()">
+        <p>Favorite</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="108" height="95" viewBox="0 0 108 95" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <path id="favorite-button-border" d="M72.748,0 C55.736,0 50,15.099 50,15.099 C50,15.099 44.271,0 27.252,0 C10.245,0 0,16.214 0,29.578 C0,51.974 50,86.108 50,86.108 C50,86.108 100,51.982 100,29.582 C100,16.214 89.76,0 72.748,0 Z"/>
+            <mask id="b" width="108" height="94.108" x="-4" y="-4">
+              <rect width="108" height="94.108" x="-4" y="-4" fill="white"/>
+              <use fill="black" xlink:href="#a"/>
+            </mask>
+          </defs>
+          <g fill="none" fill-rule="evenodd" transform="translate(4 4)">
+            <path id="favorite-button-fill" fill="#FF5454" d="M72.748,0 C55.736,0 50,15.099 50,15.099 C50,15.099 44.271,0 27.252,0 C10.245,0 0,16.214 0,29.578 C0,51.974 50,86.108 50,86.108 C50,86.108 100,51.982 100,29.582 C100,16.214 89.76,0 72.748,0 Z"/>
+            <use stroke="#D0D0D0" stroke-width="8" mask="url(#b)" xlink:href="#favorite-button-border"/>
+          </g>
+        </svg>
+      </div>
+      
+      
+      
       <!-- Tags -->
       <ul class="podcastTags">
         <li ng-repeat="tag in podcast.podcastObj.tags">{{tag}}</li>
       </ul>
+    
+     <!-- <img class="favorite-button" onclick="podcast.toggleFavorite();"> -->
+      <!-- FAVORITE BUTTON -->    
+      <!-- onclick="podcast.toggleFavoriteStatus();" --> 
+
+
+      
     
     
       <!-- Episodes -->
@@ -49,7 +75,7 @@
   
     
     <!-- Reviews -->
-    <div>
+    <div class="reviews">
       <h3>Reviews</h3>
       <div ng-repeat="review in podcast.reviews">
         <h5>{{review.name}}</h5>

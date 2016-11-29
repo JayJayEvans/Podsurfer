@@ -20,12 +20,11 @@
           
           // If the user token cookie exists, remove it
           if($cookies.get('userObj') != null) {
-             location.reload();
+            location.reload();
             $cookies.remove('userObj');          
             // Redirect to home page
-              alert('Successful Log-Out');
+            alert('Successful Log-Out');
             location.href = '#';
-
           }
           else { // Else, alert that the user has not logged in
             alert("You're not logged in");

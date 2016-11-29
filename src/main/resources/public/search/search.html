@@ -4,9 +4,9 @@
   </div>
   <div class="row">
 
-    <input ng-model="searchText" type="text" class="form-control" placeholder="Name" value="Search" autofocus>
+    <input ng-model="searchText" ng-change="search.search()" type="text" class="form-control" placeholder="Name" value="Search" autofocus>
     
-    <button ng-click="search.search()" type="button" class="btn btn-primary btn-lg btn-block">Search</button>
+    <!--<button ng-click="search.search()" type="button" class="btn btn-primary btn-lg btn-block">Search</button>-->
     
     
     <!-- EACH PODCAST WILL BE WRAPPED IN THIS LINK -->

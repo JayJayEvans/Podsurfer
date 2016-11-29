@@ -49,11 +49,11 @@
   <script src="podcast/podcast.controller.js"></script>
   <script src="podcast/podcast.service.js"></script>
   <script src="podcast/podcastReview.service.js"></script>
+  <script src="podcast/podcastFavorite.service.js"></script>
   
   <script src="register/register.controller.js"></script>
   <script src="register/register.service.js"></script>
   <script src="logout/logout.controller.js"></script>
-  <script src="logout/logout.service.js"></script>
   <script src="addpodcast/addpodcast.controller.js"></script>
   <script src="addpodcast/addpodcast.service.js"></script>
   <script src="account/editaccount.controller.js"></script>
@@ -90,6 +90,7 @@
         <li><a ui-sref="account"><i class="fa fa-group"></i> Account</a></li>
         <!--<li id="login"><a ui-sref="login"><i class="fa fa-lock"></i> Login</a></li> -->
         <li id="logout"><a ui-sref="logout"><i class="fa fa-unlock"></i> Logout</a></li>
+        <!--<li id="logout"><a ng-click="logout.logout()"><i class="fa fa-unlock"></i> Logout</a></li>-->
       </ul>
     </div>
   </nav>
