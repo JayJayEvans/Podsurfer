@@ -11,9 +11,9 @@
         .module('app')
         .controller('podcastController', podcastController);
 
-    podcastController.$inject = ['$http', '$stateParams', 'getPodcastWithId', 'podcastReviewService'];
+    podcastController.$inject = ['$http', '$stateParams', 'getPodcastWithId', 'podcastReviewService', 'podcastFavoriteService'];
 
-    function podcastController($http, $stateParams, getPodcastWithId, podcastReviewService) {
+    function podcastController($http, $stateParams, getPodcastWithId, podcastReviewService, podcastFavoriteService) {
             
       var vm = this;
 
@@ -23,11 +23,14 @@
       vm.podcastObj = [];
       vm.reviews = [];
             
+      vm.favoriteStatus = false;
+      vm.userFavoritesArray = [];
 
       // Get podcast function requires a podcast id to grab from Credera API
       vm.getPodcast = function getPodcast(podcastId) {
         
-        // PODCAST DATA
+        // PODCAST DATA ==========================================================
+        
         // Podcast Success Scenario
         var podcastSuccess = function(response) {
           // Grab the podcast object
@@ -43,7 +46,8 @@
         };
         
         
-        // REVIEW DATA
+        // REVIEW DATA ===========================================================
+        
         // Review Success Scenario
         var reviewSuccess = function(response) {
           // Grab the podcast object
@@ -57,13 +61,57 @@
           document.getElementById("review-fail").innerHTML = 'Failed to get podcast';
           console.log(response.data);
         };
-    
+        
+        
+        // FAVORITE DATA =========================================================
+        
+        // Favorite Success Scenario
+        var favoriteSuccess = function(response) {
+          
+          // Save the user
+          var user = response.data;
+          
+          // ALSO SAVE FAVORITES ARRAY
+          vm.userFavoritesArray = user.bookmarks;
+        
+          // Loop through bookmark array (favorites)
+          var arrayLength = user.bookmarks.length;
+          
+          for(var i = 0; i < arrayLength; i++) {            
+            // If the podcast id occurs in their favorites, set the status as being
+            // favorited
+            if(user.bookmarks[i] == podcastId) {
+              vm.favoriteStatus = true;
+              break;
+            }
+          }
+           
+          console.log('GOT USER FAVORITE STATUS: ' + vm.favoriteStatus);
+           
+           
+          if (vm.favoriteStatus === true) {
+            // SHOW HEART FILLED
+            setHeartActive('favorite-button-fill', 'favorite-button-border');
+          }
+          else {
+            // SHOW HEART EMPTY
+            setHeartInactive('favorite-button-fill', 'favorite-button-border');
+          }         
+        };
+  
+        // Favorite Error Scenario
+        var favoriteError = function(response) {
+          vm.favoriteStatus = false;
+          console.log('Failed to get favorite ststus so set heart to not filled');
+          console.log(response.data);
+        };
+        
   
         getPodcastWithId.apiCall(podcastId).then(podcastSuccess, podcastError); 
         podcastReviewService.getReviews(podcastId).then(reviewSuccess, reviewError);
+        podcastFavoriteService.getUser(podcastId).then(favoriteSuccess, favoriteError);
         
         return;
-        //return getPodcastWithId.apiCall(podcastId).then(success, error); 
       };
       
       
@@ -90,7 +138,42 @@
         podcastReviewService.createReview(vm.podcastId, reviewName, reviewRating, reviewBody, reviewSpoilers).then(success, error);
         
         return;       
-      }
+      };
+      
+      
+      vm.toggleFavoriteStatus = function toggleFavoriteStatus() {
+        
+        // Sucess Scenario
+        var success = function(response) {
+          
+          // Sucessfully toggle the favorite status
+          if(vm.favoriteStatus === false) {
+            vm.favoriteStatus = true;
+            setHeartActive('favorite-button-fill', 'favorite-button-border');
+          }
+          else {
+            vm.favoriteStatus = false;
+             setHeartInactive('favorite-button-fill', 'favorite-button-border');
+          }       
+        };
+  
+        // Error Scenario
+        var error = function(response) {
+          console.log("Unsucessfull favorite toggle.")
+        };
+        
+        
+        // CURRENT ARRAY FOR FAVORITES IS vm.userFavoritesArray
+        
+        if (vm.favoriteStatus === false) {
+          podcastFavoriteService.addFavorite(vm.podcastId, vm.userFavoritesArray).then(success, error);
+        }
+        else {
+          podcastFavoriteService.removeFavorite(vm.podcastId, vm.userFavoritesArray).then(success, error);
+        }
+        
+        return;       
+      };
       
       
       // Invoke the getPodcast function upon page load

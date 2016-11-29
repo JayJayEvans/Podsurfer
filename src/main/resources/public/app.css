@@ -13,6 +13,7 @@ h2 {
   list-style: none;
   padding: 0;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .podcastTags li {
@@ -114,3 +115,76 @@ h2 {
   @media (min-width: 40em) {
     .button-center {
       margin-top: 2rem; } }
+
+ 
+
+.favorite-button {
+  cursor: pointer;
+  display: inline-block;
+  
+  }
+  .favorite-button p {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+  }
+  .favorite-button svg {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+  }
+  
+  #favorite-button-border {
+    stroke: #fff;
+  }
+  #favorite-button-fill {
+    fill: #fff;
+  }
+  
+  .favorite-button:hover #favorite-button-fill {
+    /*fill: #9c2828;*/
+    fill: #2684CC;
+  }
+  
+  .favorite-button:hover #favorite-button-border {
+    /*fill: #9c2828;*/
+    fill: #2684CC;
+  }
+  
+
+path {
+  transition: opacity 200ms ease;
+  transition: fill 200ms ease;
+  transition: stroke 200ms ease;
+} 
+/*
+#favorite-button-fill:hover {
+  fill: #9c2828;
+}*/
+ 
+/*
+#favorite-button-fill {
+  opacity: 0;
+}
+
+#favorite-button-stroke {
+  opacity: 1;
+}
+
+#favorite-button:hover #favorite-button-border {
+  opacity: 0;
+}
+
+#favorite-button:hover #favorite-button-fill {
+  opacity: 1;
+}
+*/
+
+
+.reviews {
+  
+  
+}
+
