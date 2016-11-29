@@ -3,31 +3,36 @@
   <div class="row">
     <p id="podcast-fail"></p>
     
-    <h2>{{podcast.podcastObj.name}}</h2>
-    <img src="{{podcast.podcastObj.imageURL}}" alt="">
-    <p>Length: {{podcast.podcastObj.length}}</p>
-    <p>Release Date: {{podcast.podcastObj.release}}</p>
-    <a href="{{podcast.podcastObj.link}}">View Podcast Website</a>
-    <p>{{podcast.podcastObj.description}}</p>
+    <div class="podcast-obj">
+      <h2>{{podcast.podcastObj.name}}</h2>
+      <img src="{{podcast.podcastObj.imageURL}}" alt="">
+      <div class="podcast-obj-text-content">
+        <h3>Length: {{podcast.podcastObj.length}}</h3>
+        <h3>Release Date: {{podcast.podcastObj.release}}</h3>
+        <p>{{podcast.podcastObj.description}}</p>
+        <a class="button-red" href="{{podcast.podcastObj.link}}">View Podcast Website</a>
+      </div>
+      
+      <!-- Tags -->
+      <ul class="podcastTags">
+        <li ng-repeat="tag in podcast.podcastObj.tags">{{tag}}</li>
+      </ul>
     
-    <!-- Tags -->
-    <ul class="podcastTags">
-      <li ng-repeat="tag in podcast.podcastObj.tags">{{tag}}</li>
-    </ul>
     
-    <!-- Episodes -->
-    <div>
-      <h3>Episodes</h3>
-      <div ng-repeat="episode in podcast.podcastObj.episodes">
-        <p>{{episode.number}}</p>
-        <h4>{{episode.name}}</h4>
-        <img src="{{episode.imageURL}}" alt="">
-        <a href="{{episode.link}}">See Episode</a>
-        <p>{{episode.description}}</p>
+      <!-- Episodes -->
+      <div>
+        <h3>Episodes</h3>
+        <div ng-repeat="episode in podcast.podcastObj.episodes">
+          <p>{{episode.number}}</p>
+          <h4>{{episode.name}}</h4>
+          <img src="{{episode.imageURL}}" alt="">
+          <a class="button-red" href="{{episode.link}}">See Episode</a>
+          <p>{{episode.description}}</p>
+        </div>
       </div>
     </div>
     
-    <button class="reviewBtn btn btn-primary btn-lg btn-block" onclick="toggleVisibility('reviewForm');">Write A Review</button>
+    <a class="reviewBtn button" onclick="toggleVisibility('reviewForm');">Write A Review</a>
     
     <div id="reviewForm">
       
@@ -38,7 +43,7 @@
       <input ng-model="reviewBody" type="text" class="form-control" placeholder="Your review . . .">
       <input ng-model="reviewSpoilers" type="text" class="form-control" placeholder="Spoilers: true or false">
       
-      <button ng-click="podcast.addReview(reviewName, reviewRating, reviewBody, reviewSpoilers)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+      <a ng-click="podcast.addReview(reviewName, reviewRating, reviewBody, reviewSpoilers)" type="button" class="button">Submit</a>
       
     </div>
   

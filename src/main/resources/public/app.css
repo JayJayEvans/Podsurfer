@@ -2,17 +2,23 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  
+}
+
 
 .podcastTags {
   list-style: none;
   padding: 0;
+  text-transform: uppercase;
 }
 
 .podcastTags li {
   display: inline-block;
   color: #fff;
   background-color: #FF4F4F;
-  border-radius: 4px;
   padding: 2px 10px;
   margin: 0 4px;
 }
@@ -27,6 +33,25 @@
   
 }
 
+/* SINGULAR PODCAST OBJECT */
+.podcast-obj {
+
+}
+
+.podcast-obj img {
+  width: 300px;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.podcast-obj .podcast-obj-text-content {
+  display: inline-block;
+  
+  
+}
+/* END SINGULAR PODCAST OBJECT */
+
+
 #reviewForm {
   display: none;
 }
@@ -36,3 +61,56 @@
   font-weight: bold;
   color: #ff2525;
 }
+
+
+/* BUTTONS */
+.button, .button-red, .button-yellow {
+  font-size: 16px;
+  display: inline-block;
+  color: #fff;
+  background-color: #31A6FF;
+  font-weight: 600;
+  padding: 1.4rem 2.6rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  border-radius: 0.4rem;
+  box-shadow: #2683C9 0 0.4rem 0;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  transition: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;}
+  .button:hover, .button-red:hover, .button-yellow:hover {
+    color: #fff;
+    box-shadow: #2683C9 0 0.6rem 0;
+    top: -0.2rem;
+    text-decoration: none;}
+  .button:active, .button-red:active, .button-yellow:active {
+    box-shadow: #2683C9 0 0 0;
+    top: 0.4rem; }
+
+.button-red {
+  background-color: #FF5454;
+  box-shadow: #C94242 0 0.4rem 0; }
+  .button-red:hover {
+    box-shadow: #C94242 0 0.6rem 0; }
+  .button-red:active {
+    box-shadow: #C94242 0 0 0; }
+
+.button-yellow {
+  background-color: #F2E200;
+  box-shadow: #B0A400 0 0.4rem 0; }
+  .button-yellow:hover {
+    box-shadow: #B0A400 0 0.6rem 0; }
+  .button-yellow:active {
+    box-shadow: #B0A400 0 0 0; }
+
+.button-center {
+  text-align: center;
+  margin-top: 6rem; }
+  @media (min-width: 40em) {
+    .button-center {
+      margin-top: 2rem; } }
