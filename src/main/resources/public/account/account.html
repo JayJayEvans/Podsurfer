@@ -39,10 +39,11 @@
       <lh>Interests: </lh>
           <li ng-repeat="item in account.interests">{{item}}</li>
     </p>
+    <!--
     <p>
       <lh>Bookmarks: </lh>
       <li ng-repeat="podcast in account.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
-    </p>
+    </p>-->
     <!-- Add Interest Form -->
     <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('interestForm');">Add Interest</button>
     <button class="btn btn-primary btn-lg btn-block" onclick="toggleVisibility('removalForm');">Remove Interest</button>
@@ -65,6 +66,18 @@
       <p class="errorAlert" id="name-change-fail"></p>
       <input ng-model="name" type="text" class="form-control" placeholder="Name">
       <button ng-click="account.changeName(name)" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </div>
+
+    <div class="reviews">
+      <h3>My Reviews</h3>
+      <div ng-repeat="review in account.reviews">
+        <h5>{{review.name}}</h5>
+        <p>Rating: {{review.rating}}</p>
+        <p>{{review.review}}</p>
+        <p>By: {{review.reviewer.name}}</p>
+        
+        <a class="button-red" ng-click="account.deleteReview(review._id)">Delete Review</a>
+      </div>
     </div>
 
     
