@@ -103,6 +103,7 @@
         var favoriteError = function(response) {
           vm.favoriteStatus = false;
           console.log('Failed to get favorite ststus so set heart to not filled');
+          setHeartInactive('favorite-button-fill', 'favorite-button-border');
           console.log(response.data);
         };
         
@@ -159,7 +160,9 @@
   
         // Error Scenario
         var error = function(response) {
-          console.log("Unsucessfull favorite toggle.")
+          console.log("Unsucessfull favorite toggle.");
+          location.reload(true);
+          location.href = '#/login';
         };
         
         
