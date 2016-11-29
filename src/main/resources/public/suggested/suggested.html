@@ -1,9 +1,31 @@
-<div class="container">
+<div class="container" style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
     <div class="row">
-        <h3 class="text-center">{{suggested.message}}</h3>
+        <h3 id="myAnchor" style="font-size:40px;" class="text-center">{{suggested.title}}</h3>
     </div>
     <hr class="row" />
     <div class="row">
-        All suggested podcasts go here. Ordered by relavance.
+        
+            <lh>Interests: </lh>
+        <li ng-repeat="item in suggested.interests">{{item}}</li>
+        </p>
+        <p>
+            <lh>Bookmarks: </lh>
+        <li ng-repeat="podcast in suggested.bookmarks"><a href="/podcast/{{podcast}}"></a></li>
+        </p>
+
+        <!-- This is where we will display suggested podcasts based on Interests -->
+        <div>
+            <a class="podcastSearchObj" ng-repeat="podcast in suggested.podcasts | filter:searchText" ui-sref="podcast({ podcastId: '{{podcast._id}}' })">
+                <h2>{{podcast.name}}</h2>
+                <p>{{podcast.length}}</p>
+                <ul class="podcastTags">
+                    <li ng-repeat="tag in podcast.tags">{{tag}}</li>
+                </ul>
+            </a>
+        </div>
+
+        <!-- This button is unneeded now because the suggested() function is called in the javascript -->
+        <!-- <button ng-click="suggested.suggested()" type="button" class="btn btn-primary btn-lg btn-block">Get My Info</button> -->
+        <!--<a type="button" href="/#/editsuggested" class="btn btn-primary btn-lg btn-block" >Register</a>-->
     </div>
 </div>

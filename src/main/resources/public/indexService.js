@@ -1,24 +1,24 @@
 /**
- * Created by colecrawford on 11/28/16.
+ * Created by Jason on 11/28/2016.
  */
 (function() {
     'use strict';
 
     angular
         .module('app')
-        .service('suggestedService', suggestedService);
+        .service('indexService', indexService);
 
-    suggestedService.$inject = ['$http', '$cookies'];
+    indexService.$inject = ['$http', '$cookies'];
 
-    function suggestedService($http, $cookies) {
+    function indexService($http, $cookies) {
 
         var token = $cookies.get('userObj');
         if(token != null)
             token = token.substring(10, token.length - 2);
 
         var exports = {
-            getUserInfo: getUserInfo,
-            getPodcasts: getPodcasts
+            getUserInfo: getUserInfo
+
         };
 
         return exports;
@@ -37,15 +37,8 @@
             return $http(apiRequest);
         }
 
-        function getPodcasts() {
 
-            // The login request
-            var searchRequest = {
-                method: 'GET',
-                url: 'https://podsurfer-4.herokuapp.com/api/podcast/',
-            }
 
-            return $http(searchRequest);
-        }
+
     }
 })();

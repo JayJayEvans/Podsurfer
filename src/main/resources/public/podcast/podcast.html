@@ -39,7 +39,7 @@
       <p class="errorAlert" id="review-create-fail"></p>
       
       <input ng-model="reviewName" type="text" class="form-control" placeholder="ReviewTitle">
-      <input ng-model="reviewRating" type="text" class="form-control" placeholder="Rating">
+      <input ng-model="reviewRating" type="number" min="1" max="5" class="form-control" placeholder="Rating">
       <input ng-model="reviewBody" type="text" class="form-control" placeholder="Your review . . .">
       <input ng-model="reviewSpoilers" type="text" class="form-control" placeholder="Spoilers: true or false">
       
