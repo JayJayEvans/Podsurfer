@@ -22,3 +22,18 @@ function setHeartInactive(fillId, borderId) {
   fill.style.opacity = '0';
   border.style.opacity = '1';
 }
+
+
+function hide(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+
+}
+
+function show(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'none')
+      e.style.display = 'block';
+
+}
