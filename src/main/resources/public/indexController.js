@@ -13,7 +13,6 @@
 
     function indexController(indexService, $cookies) {
         var vm = this;
-        vm.title = 'Index';
         vm.showHide = 'true';
 
         vm.index = function index() {

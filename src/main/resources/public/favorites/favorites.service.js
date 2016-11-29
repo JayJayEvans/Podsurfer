@@ -6,17 +6,19 @@
 
     angular
         .module('app')
-        .service('favService', favService);
+        .service('favoritesService', favoritesService);
 
-    favService.$inject = ['$http', '$cookies'];
+    favoritesService.$inject = ['$http', '$cookies'];
 
-    function favService($http, $cookies) {
+    function favoritesService($http, $cookies) {
+      
         var token = $cookies.get('userObj');
         if (token != null)
             token = token.substring(10, token.length - 2);
 
         var exports = {
-            getUserInfo: getUserInfo
+            getUserInfo: getUserInfo,
+            getPodcastInfo: getPodcastInfo
         };
 
         return exports;
@@ -30,6 +32,17 @@
                 headers: {
                     Authorization: 'Bearer ' + token
                 }
+            }
+
+            return $http(apiRequest);
+        }
+        
+        
+        function getPodcastInfo(podcastId) {
+
+            var apiRequest = {
+                method: 'GET',
+                url: 'https://podsurfer-4.herokuapp.com/api/podcast/' + podcastId,
             }
 
             return $http(apiRequest);

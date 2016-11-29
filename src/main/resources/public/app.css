@@ -14,6 +14,7 @@ h2 {
   padding: 0;
   text-transform: uppercase;
   font-weight: 500;
+  margin-bottom: 0;
 }
 
 .podcastTags li {
@@ -22,6 +23,10 @@ h2 {
   background-color: #FF4F4F;
   padding: 2px 10px;
   margin: 0 4px;
+}
+
+.podcastTags li:first-child {
+  margin-left: 0;
 }
 
 .podcastSearchObj {
@@ -188,3 +193,36 @@ path {
   
 }
 
+
+.podcast-obj-fav, .podcast-obj-fav:hover, .podcast-obj-fav:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.podcast-obj-fav:hover div {
+  position: relative;
+  top: -10px;
+  background-color: #FF5454;
+  box-shadow: 0 3px 8px 2px rgba(0,0,0,0.50);
+}
+
+.podcast-obj-fav {
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  }
+  .podcast-obj-fav div {
+    background-color: #0f2442;
+    padding: 10px;
+    transition-duration: 200ms;
+    position: relative;
+    top: 0;}
+
+  .podcast-obj-fav img {
+    width: 80px;} 
+  .podcast-obj-fav ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
