@@ -27,6 +27,7 @@
         vm.interests = response.data.interests;
         vm.bookmarks = response.data.bookmarks;
         document.getElementById("myAnchor").innerHTML = vm.name + " Profile";
+
         stolen = vm.interests;
        // $cookies.putObject('userId',response.data._id);
 
