@@ -8,41 +8,56 @@
         .module('app')
         .controller('addpodcastController', addpodcastController);
 
-    addpodcastController.$inject = ['addService', '$cookies'];
+    addpodcastController.$inject = ['addPodcastService', '$cookies'];
 
-    function addpodcastController(addService, $cookies){
-        
-        
-        var vm = this;
-        vm.title = 'Upload';
+    function addpodcastController(addPodcastService, $cookies){
+          
+      var vm = this;
+      vm.title = 'Upload a Podcast';
 
-
-        vm.addpodcast = function addpodcast(name, link, release, producer, length, episodes, tags, description) {
+      vm.addpodcast = function addpodcast(name, link, release, producer, length, description, episodes, tags, imageURL) {
 
         // Add Success Scenario
         var success = function(response){
             console.log('Added a New Podcast!');
             $cookies.putObject('podID',response._id);
-            vm.successful = true;
-            //vm.token = "true"
         };
 
         // Add Error Scenario
         var error = function(response){
-            vm.successful = false;
-            //vm.token = "false";
-            //console.log
             document.getElementById("upload-fail").innerHTML = 'Failed to login';
             console.error('Failed to Create a New Podcast or authorization failure!');
         };
 
-        var episodes = (vm.episodes ? vm.episodes.split(",") : []);
-        var tags = (vm.tags ? vm.tags.split(",") : []);
+        //var episodes = (vm.episodes ? vm.episodes.split(",") : []);
+        //var tags = (vm.tags ? vm.tags.split(",") : []);
 
         //console.log(vm);
-        console.log(episodes);
-        console.log(tags);
-        return addService.addP(name, link, release, producer, length, episodes, tags, description).then(success, error);
+        //console.log(episodes);
+        //console.log(tags);
+        
+        // Add http or https if necessary to external link
+        if (link.substring(0, 7) != "http://" && link.substring(0, 8) != "https://") {
+            if(link.substring(0, 7) != "http://") {
+                link = "http://" + link;
+            }
+            else {
+                link = "https://" + link;
+            }
+        }
+        
+        // Add http or https if necessary to imageURL
+        if (imageURL.substring(0, 7) != "http://" && imageURL.substring(0, 8) != "https://") {
+            if(imageURL.substring(0, 7) != "http://") {
+                imageURL = "http://" + imageURL;
+            }
+            else {
+                imageURL = "https://" + imageURL;
+            }
+        }
+
+        
+        return addPodcastService.addP(name, link, release, producer, length, description, episodes, tags, imageURL).then(success, error);
 
     }
 
@@ -52,13 +67,11 @@
             var success = function(response){
                 console.log('Edited a Podcast!');
                 $cookies.putObject('podID',response._id);
-                vm.successful = true;
                 //vm.token = "true"
             };
 
             // Add Error Scenario
             var error = function(response){
-                vm.successful = false;
                 //vm.token = "false";
                 //console.log
                 document.getElementById("edit-fail").innerHTML = 'Failed to login';
@@ -71,7 +84,7 @@
             //console.log(vm);
             console.log(episodes);
             console.log(tags);
-            return addService.editP(name, link, release, producer, length, episodes, tags, description, id).then(success, error);
+            return addPodcastService.editP(name, link, release, producer, length, episodes, tags, description, id).then(success, error);
 
         }
 

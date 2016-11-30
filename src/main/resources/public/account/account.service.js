@@ -18,6 +18,8 @@
 
         var exports = {
             getUserInfo: getUserInfo,
+            getUserReviews: getUserReviews,
+            deleteReview: deleteReview,
             putInterest: putInterest,
             killInterest: killInterest,
             nameChange: nameChange
@@ -38,6 +40,35 @@
           
           return $http(apiRequest);
         }
+        
+        
+        function getUserReviews() {
+          
+          var apiRequest = {
+            method: 'GET',
+            url: 'https://podsurfer-4.herokuapp.com/api/review/mine',
+            headers: {
+              Authorization: 'Bearer ' + token
+            }
+          }
+          
+          return $http(apiRequest);
+          
+        }
+        
+        function deleteReview(reviewId) {
+          
+          var apiRequest = {
+            method: 'DELETE',
+            url: 'https://podsurfer-4.herokuapp.com/api/review/' + reviewId,
+            headers: {
+              Authorization: 'Bearer ' + token
+            }
+          }
+          
+          return $http(apiRequest);
+        }
+        
         
         function putInterest(interest,stolen) {
           var arr = stolen;
@@ -86,9 +117,6 @@
 
 
         }
-
-
-
 
 
         function nameChange(name) {

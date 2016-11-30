@@ -3,30 +3,32 @@
 
     angular
         .module('app')
-        .service('addService', addService);
+        .service('addPodcastService', addPodcastService);
 
-    addService.$inject = ['$http', '$cookies'];
+    addPodcastService.$inject = ['$http', '$cookies'];
 
-    function addService($http, $cookies){
+    function addPodcastService($http, $cookies){
+        
+        // Grab User Login Token
         var token = $cookies.get('userObj');
-        // console.log(token);
         if(token != null)
             token = token.substring(10, token.length - 2);
 
-
+        // Export Function names
         var exports = {
             addP:addP,
             editP:editP
         };
         return exports;
 
-        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, episodesIn, tagsIn, descriptionIn){
 
-            //console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn);
-            console.log(episodesIn);
-            console.log(tagsIn);
+        function addP(nameIn, linkIn, releaseIn, producerIn, lengthIn, descriptionIn, episodesIn, tagsIn, imageURLIn){
 
-            var addRequest = {
+            console.log(nameIn + " " + linkIn + " " + releaseIn + " " + producerIn + " " + lengthIn + " " + descriptionIn + " " + episodesIn + " " + tagsIn + " " + imageURLIn);
+            //console.log(episodesIn);
+            //console.log(tagsIn);
+
+            var APIRequest = {
                 method: 'POST',
                 url: 'https://podsurfer-4.herokuapp.com/api/podcast',
                 headers:
@@ -39,14 +41,13 @@
                     release : releaseIn,
                     producer : producerIn,
                     length : lengthIn,
+                    description : descriptionIn,
                     episodes: episodesIn,
                     tags: tagsIn,
-                    description : descriptionIn
-
-
+                    imageURL : imageURLIn
                 }
             }
-            return $http(addRequest);
+            return $http(APIRequest);
         }
 
         function editP(nameIn, linkIn, releaseIn, producerIn, lengthIn, episodesIn, tagsIn, descriptionIn, idIn){
