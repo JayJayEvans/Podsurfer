@@ -17,9 +17,12 @@
     vm.interests = [];
     vm.bookmarks = [];
     var stolen = vm.interests;
+    vm.reviews = [];
+    
+    
     vm.account = function account() {
 
-      var success = function(response) {
+      var userInfoSuccess = function(response) {
         
         vm._id = response.data._id;
         vm.name = response.data.name;
@@ -27,12 +30,13 @@
         vm.interests = response.data.interests;
         vm.bookmarks = response.data.bookmarks;
         document.getElementById("myAnchor").innerHTML = vm.name + " Profile";
+
         stolen = vm.interests;
        // $cookies.putObject('userId',response.data._id);
 
-      }
+      };
 
-      var error = function(response) {
+      var userInfoError = function(response) {
 
         console.error('Failed');
         console.error($cookies.get('userObj'))
@@ -42,10 +46,46 @@
         document.getElementById("myAnchor").innerHTML = "User Is Not Logged In";
         location.href = '#/login';
         //alert('You must be signed in to view your profile');
-      }
-      return accountService.getUserInfo().then(success, error);
+      };
+      
+      
+      var reviewSuccess = function(response) {
+        console.log("Sucessfully grabbed reviews.");
+        vm.reviews = response.data;
+      };
+      
+      var reviewError = function(response) {
+        
+        console.error('Failed grabbing user reviews');
+        console.log(response.data);        
+        
+      };
+      
+      accountService.getUserInfo().then(userInfoSuccess, userInfoError);
+      accountService.getUserReviews().then(reviewSuccess, reviewError);
+      return;
 
     };
+    
+    vm.deleteReview = function deleteReview(reviewId) {
+      
+      var success = function(response) {
+        console.log("Sucessfully deleted review");
+        // Reload vm.account
+        vm.account();
+      };
+      
+      var error = function(response) {
+        console.log("Could not delete review");
+        console.log(response.data); 
+      };
+      
+      
+      accountService.deleteReview(reviewId).then(success, error);
+      return;
+    };
+    
+    
     
     vm.addInterest = function addInterest(interest) {
       
@@ -70,8 +110,6 @@
         
         return;       
 
-      
-      
     };
 
 
