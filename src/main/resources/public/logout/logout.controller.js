@@ -13,7 +13,7 @@
     function logoutController($cookies) {
 
         var vm = this;
-        vm.title = 'logout';
+        vm.title = 'Logout';
         
         
         vm.logout = function logout() {
