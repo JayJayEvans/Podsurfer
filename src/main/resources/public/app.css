@@ -2,6 +2,24 @@
   font-family: 'Roboto', sans-serif;
 }
 
+/* INDEX.html Styles */
+.index-nav {
+  background-color:#010D3E;   
+}
+.navbar-default .navbar-brand {
+  color: #fff;
+  background-color:#010D3E; 
+}
+
+.navbar .container .nav li a {
+  color: #f8f8f8;
+}
+
+.navbar .container .nav li a:hover {
+  color: #838383;
+}
+
+
 h2 {
   font-size: 40px;
   font-weight: 700;
