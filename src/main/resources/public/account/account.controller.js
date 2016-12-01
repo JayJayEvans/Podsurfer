@@ -41,7 +41,7 @@
         
         // Redirect to login
 
-        document.getElementById("myAnchor").innerHTML = "User Is Not Logged In";
+        // document.getElementById("myAnchor").innerHTML = "User Is Not Logged In";
         location.href = '#/login';
         //alert('You must be signed in to view your profile');
       };

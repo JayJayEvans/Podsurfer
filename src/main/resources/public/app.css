@@ -211,7 +211,6 @@ path {
   
 }
 
-
 .podcast-obj-fav, .podcast-obj-fav:hover, .podcast-obj-fav:visited {
   text-decoration: none;
   color: #fff;
@@ -238,7 +237,8 @@ path {
     top: 0;}
 
   .podcast-obj-fav img {
-    width: 80px;} 
+    width: 80px;
+    margin-bottom: 30px;} 
   .podcast-obj-fav ul {
     position: absolute;
     bottom: 0;
